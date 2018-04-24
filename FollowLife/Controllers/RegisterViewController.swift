@@ -9,11 +9,31 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstNameTextField.setBottomBorder()
+        lastNameTextField.setBottomBorder()
+        emailTextField.setBottomBorder()
+        passwordTextField.setBottomBorder()
 
-        // Do any additional setup after loading the view.
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(gestureRecognizer:)))
+        signInLabel.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    
+    @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        self.present(nextViewController, animated:true, completion:nil)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,3 +53,5 @@ class RegisterViewController: UIViewController {
     */
 
 }
+
+

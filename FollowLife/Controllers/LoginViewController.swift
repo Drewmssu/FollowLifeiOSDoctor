@@ -11,14 +11,26 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var signUpLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.setBottomBorder()
         passwordTextField.setBottomBorder()
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(gestureRecognizer:)))
+        signUpLabel.addGestureRecognizer(tapGestureRecognizer)
             
     }
     
+    @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Register") as! RegisterViewController
+        self.present(nextViewController, animated:true, completion:nil)
+        
+       
+    }
 
     
 
