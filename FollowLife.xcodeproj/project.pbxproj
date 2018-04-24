@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28398889208E95360066BC85 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28398888208E95360066BC85 /* RegisterViewController.swift */; };
+		2839888B208E955F0066BC85 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839888A208E955F0066BC85 /* RegisterViewModel.swift */; };
 		28E433D7208D234F00B2EBAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E433D6208D234F00B2EBAC /* AppDelegate.swift */; };
-		28E433D9208D234F00B2EBAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E433D8208D234F00B2EBAC /* ViewController.swift */; };
 		28E433DC208D234F00B2EBAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E433DA208D234F00B2EBAC /* Main.storyboard */; };
 		28E433DF208D234F00B2EBAC /* FollowLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28E433DD208D234F00B2EBAC /* FollowLife.xcdatamodeld */; };
 		28E433E1208D235000B2EBAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E433E0208D235000B2EBAC /* Assets.xcassets */; };
 		28E433E4208D235000B2EBAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E433E2208D235000B2EBAC /* LaunchScreen.storyboard */; };
 		28E433EF208D235000B2EBAC /* FollowLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E433EE208D235000B2EBAC /* FollowLifeTests.swift */; };
 		28E433FA208D235000B2EBAC /* FollowLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E433F9208D235000B2EBAC /* FollowLifeUITests.swift */; };
+		28E4340E208D34AD00B2EBAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4340D208D34AD00B2EBAC /* LoginViewModel.swift */; };
+		28E43412208D35A700B2EBAC /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E43411208D35A700B2EBAC /* LoginModel.swift */; };
+		28E43415208D4AE400B2EBAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E43414208D4AE400B2EBAC /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28398888208E95360066BC85 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2839888A208E955F0066BC85 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		28E433D3208D234F00B2EBAC /* FollowLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E433D6208D234F00B2EBAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28E433D8208D234F00B2EBAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28E433DB208D234F00B2EBAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28E433DE208D234F00B2EBAC /* FollowLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FollowLife.xcdatamodel; sourceTree = "<group>"; };
 		28E433E0208D235000B2EBAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +54,9 @@
 		28E433F5208D235000B2EBAC /* FollowLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FollowLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E433F9208D235000B2EBAC /* FollowLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowLifeUITests.swift; sourceTree = "<group>"; };
 		28E433FB208D235000B2EBAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28E4340D208D34AD00B2EBAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		28E43411208D35A700B2EBAC /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		28E43414208D4AE400B2EBAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +107,14 @@
 		28E433D5208D234F00B2EBAC /* FollowLife */ = {
 			isa = PBXGroup;
 			children = (
+				28E43413208D488800B2EBAC /* Controllers */,
+				28E4340C208D278B00B2EBAC /* ViewModel */,
+				28E43409208D238200B2EBAC /* Model */,
+				28E43407208D237300B2EBAC /* View */,
 				28E433D6208D234F00B2EBAC /* AppDelegate.swift */,
-				28E433D8208D234F00B2EBAC /* ViewController.swift */,
-				28E433DA208D234F00B2EBAC /* Main.storyboard */,
-				28E433E0208D235000B2EBAC /* Assets.xcassets */,
-				28E433E2208D235000B2EBAC /* LaunchScreen.storyboard */,
+				28E4340A208D23A500B2EBAC /* Assets */,
 				28E433E5208D235000B2EBAC /* Info.plist */,
+				28E4340B208D243400B2EBAC /* Supporting Files */,
 				28E433DD208D234F00B2EBAC /* FollowLife.xcdatamodeld */,
 			);
 			path = FollowLife;
@@ -126,6 +136,56 @@
 				28E433FB208D235000B2EBAC /* Info.plist */,
 			);
 			path = FollowLifeUITests;
+			sourceTree = "<group>";
+		};
+		28E43407208D237300B2EBAC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28E43409208D238200B2EBAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28E43411208D35A700B2EBAC /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28E4340A208D23A500B2EBAC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				28E433DA208D234F00B2EBAC /* Main.storyboard */,
+				28E433E0208D235000B2EBAC /* Assets.xcassets */,
+				28E433E2208D235000B2EBAC /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		28E4340B208D243400B2EBAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28E4340C208D278B00B2EBAC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				28E4340D208D34AD00B2EBAC /* LoginViewModel.swift */,
+				2839888A208E955F0066BC85 /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		28E43413208D488800B2EBAC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28E43414208D4AE400B2EBAC /* LoginViewController.swift */,
+				28398888208E95360066BC85 /* RegisterViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +319,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28E433D9208D234F00B2EBAC /* ViewController.swift in Sources */,
 				28E433D7208D234F00B2EBAC /* AppDelegate.swift in Sources */,
+				28E43412208D35A700B2EBAC /* LoginModel.swift in Sources */,
+				2839888B208E955F0066BC85 /* RegisterViewModel.swift in Sources */,
 				28E433DF208D234F00B2EBAC /* FollowLife.xcdatamodeld in Sources */,
+				28398889208E95360066BC85 /* RegisterViewController.swift in Sources */,
+				28E43415208D4AE400B2EBAC /* LoginViewController.swift in Sources */,
+				28E4340E208D34AD00B2EBAC /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8468U436K8;
 				INFOPLIST_FILE = FollowLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8468U436K8;
 				INFOPLIST_FILE = FollowLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
