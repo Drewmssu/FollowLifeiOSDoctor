@@ -22,12 +22,11 @@ class AppointmentDetailsTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cancelAppointmentButton.backgroundColor = .clear
+        
         cancelAppointmentButton.layer.cornerRadius = 5
         cancelAppointmentButton.layer.borderWidth = 1
         cancelAppointmentButton.layer.borderColor = UIColor.white.cgColor
         
-        prescriptionListButton.backgroundColor = .clear
         prescriptionListButton.layer.cornerRadius = 5
         prescriptionListButton.layer.borderWidth = 1
         prescriptionListButton.layer.borderColor = UIColor(red:0.42, green:0.80, blue:0.80, alpha:1.0).cgColor
