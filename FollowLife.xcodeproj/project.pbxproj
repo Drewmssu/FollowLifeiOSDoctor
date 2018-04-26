@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282AF04C2091CCBE00C9357E /* AppointmentDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF04B2091CCBE00C9357E /* AppointmentDetailsTableViewController.swift */; };
+		282AF04E2091D7A200C9357E /* ChooseRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF04D2091D7A200C9357E /* ChooseRoleViewController.swift */; };
+		282AF0502091DC0300C9357E /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF04F2091DC0300C9357E /* CalendarTableViewController.swift */; };
+		282AF0522091EBA500C9357E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF0512091EBA500C9357E /* HomeViewModel.swift */; };
+		282AF0542091EBC500C9357E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF0532091EBC500C9357E /* HomeViewController.swift */; };
+		282AF0562091EC3900C9357E /* ChoosePackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF0552091EC3900C9357E /* ChoosePackageViewController.swift */; };
+		282AF0582091EED500C9357E /* ChoosePackage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF0572091EED500C9357E /* ChoosePackage2ViewController.swift */; };
 		28398889208E95360066BC85 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28398888208E95360066BC85 /* RegisterViewController.swift */; };
 		2839888B208E955F0066BC85 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839888A208E955F0066BC85 /* RegisterViewModel.swift */; };
 		28398890208EE8240066BC85 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839888F208EE8240066BC85 /* CalendarViewController.swift */; };
@@ -40,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		282AF04B2091CCBE00C9357E /* AppointmentDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailsTableViewController.swift; sourceTree = "<group>"; };
+		282AF04D2091D7A200C9357E /* ChooseRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoleViewController.swift; sourceTree = "<group>"; };
+		282AF04F2091DC0300C9357E /* CalendarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
+		282AF0512091EBA500C9357E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		282AF0532091EBC500C9357E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		282AF0552091EC3900C9357E /* ChoosePackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePackageViewController.swift; sourceTree = "<group>"; };
+		282AF0572091EED500C9357E /* ChoosePackage2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePackage2ViewController.swift; sourceTree = "<group>"; };
 		28398888208E95360066BC85 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2839888A208E955F0066BC85 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		2839888F208EE8240066BC85 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +191,7 @@
 			children = (
 				28E4340D208D34AD00B2EBAC /* LoginViewModel.swift */,
 				2839888A208E955F0066BC85 /* RegisterViewModel.swift */,
+				282AF0512091EBA500C9357E /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -187,6 +202,12 @@
 				28E43414208D4AE400B2EBAC /* LoginViewController.swift */,
 				28398888208E95360066BC85 /* RegisterViewController.swift */,
 				2839888F208EE8240066BC85 /* CalendarViewController.swift */,
+				282AF04B2091CCBE00C9357E /* AppointmentDetailsTableViewController.swift */,
+				282AF04D2091D7A200C9357E /* ChooseRoleViewController.swift */,
+				282AF04F2091DC0300C9357E /* CalendarTableViewController.swift */,
+				282AF0532091EBC500C9357E /* HomeViewController.swift */,
+				282AF0552091EC3900C9357E /* ChoosePackageViewController.swift */,
+				282AF0572091EED500C9357E /* ChoosePackage2ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,11 +346,18 @@
 				28398890208EE8240066BC85 /* CalendarViewController.swift in Sources */,
 				28E433D7208D234F00B2EBAC /* AppDelegate.swift in Sources */,
 				28E43412208D35A700B2EBAC /* LoginModel.swift in Sources */,
+				282AF04E2091D7A200C9357E /* ChooseRoleViewController.swift in Sources */,
+				282AF0562091EC3900C9357E /* ChoosePackageViewController.swift in Sources */,
 				2839888B208E955F0066BC85 /* RegisterViewModel.swift in Sources */,
 				28E433DF208D234F00B2EBAC /* FollowLife.xcdatamodeld in Sources */,
 				28398889208E95360066BC85 /* RegisterViewController.swift in Sources */,
+				282AF0522091EBA500C9357E /* HomeViewModel.swift in Sources */,
 				28E43415208D4AE400B2EBAC /* LoginViewController.swift in Sources */,
 				28E4340E208D34AD00B2EBAC /* LoginViewModel.swift in Sources */,
+				282AF0582091EED500C9357E /* ChoosePackage2ViewController.swift in Sources */,
+				282AF04C2091CCBE00C9357E /* AppointmentDetailsTableViewController.swift in Sources */,
+				282AF0542091EBC500C9357E /* HomeViewController.swift in Sources */,
+				282AF0502091DC0300C9357E /* CalendarTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
