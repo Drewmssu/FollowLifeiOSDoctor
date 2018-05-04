@@ -11,25 +11,19 @@ import UIKit
 class AppointmentDetailsTableViewController: UIViewController {
     
     @IBOutlet weak var cancelAppointmentButton: UIButton!
-    @IBOutlet weak var prescriptionListButton: UIButton!
+   
     
-    @IBAction func cancelAppointmentAction(_ sender: Any) {
-    }
-    
-    @IBAction func seePrescriptionListAction(_ sender: Any) {
-    }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
         cancelAppointmentButton.layer.cornerRadius = 5
         cancelAppointmentButton.layer.borderWidth = 1
         cancelAppointmentButton.layer.borderColor = UIColor.white.cgColor
         
-        prescriptionListButton.layer.cornerRadius = 5
-        prescriptionListButton.layer.borderWidth = 1
-        prescriptionListButton.layer.borderColor = UIColor(red:0.42, green:0.80, blue:0.80, alpha:1.0).cgColor
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
