@@ -2,7 +2,6 @@
 //  User.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 22/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -23,14 +22,8 @@ public class User {
     public var lastIPConnection: String
     public var createdAt: String
     public var updatedOn: String
-    private let dateFormatter: DateFormatter
     
     public init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = 0
         self.email = ""
         self.password = ""
@@ -42,16 +35,11 @@ public class User {
         self.profilePicture = ""
         self.sessionToken = ""
         self.lastIPConnection = ""
-        self.createdAt = dateFormatter.string(from: Date())
-        self.updatedOn = dateFormatter.string(from: Date())
+        self.createdAt = Utils.getTimeNow()
+        self.updatedOn = Utils.getTimeNow()
     }
     
-    public init(id: Int, email: String, password: String, roleId: Int, firstName: String, lastName: String, status: String, phoneNumber: String, profilePicture: String, sessionToken: String, lastIPConnection: String, createdAt: Date, updatedOn: Date) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
+    public init(id: Int, email: String, password: String, roleId: Int, firstName: String, lastName: String, status: String, phoneNumber: String?, profilePicture: String?, sessionToken: String?, lastIPConnection: String?, createdAt: Date, updatedOn: Date?) {
         self.id = id
         self.email = email
         self.password = password
@@ -59,20 +47,15 @@ public class User {
         self.firstName = firstName
         self.lastName = lastName
         self.status = status
-        self.phoneNumber = phoneNumber
-        self.profilePicture = profilePicture
-        self.sessionToken = sessionToken
-        self.lastIPConnection = lastIPConnection
-        self.createdAt = dateFormatter.string(from: createdAt)
-        self.updatedOn = dateFormatter.string(from: updatedOn)
+        self.phoneNumber = (phoneNumber == nil) ? "" : phoneNumber!
+        self.profilePicture = (profilePicture == nil) ? "" : profilePicture!
+        self.sessionToken = (sessionToken == nil) ? "" : sessionToken!
+        self.lastIPConnection = (lastIPConnection == nil) ? "" : lastIPConnection!
+        self.createdAt = Utils.convertTime(from: createdAt)
+        self.updatedOn = Utils.convertTime(from: updatedOn)
     }
     
-    public init(id: Int, email: String, password: String, roleId: Int, firstName: String, lastName: String, status: String, phoneNumber: String, profilePicture: String, sessionToken: String, lastIPConnection: String, createdAt: String, updatedOn: String) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
+    public init(id: Int, email: String, password: String, roleId: Int, firstName: String, lastName: String, status: String, phoneNumber: String?, profilePicture: String?, sessionToken: String?, lastIPConnection: String?, createdAt: String, updatedOn: String?) {
         self.id = id
         self.email = email
         self.password = password
@@ -80,30 +63,28 @@ public class User {
         self.firstName = firstName
         self.lastName = lastName
         self.status = status
-        self.phoneNumber = phoneNumber
-        self.profilePicture = profilePicture
-        self.sessionToken = sessionToken
-        self.lastIPConnection = lastIPConnection
+        self.phoneNumber = (phoneNumber == nil) ? "" : phoneNumber!
+        self.profilePicture = (profilePicture == nil) ? "" : profilePicture!
+        self.sessionToken = (sessionToken == nil) ? "" : sessionToken!
+        self.lastIPConnection = (lastIPConnection == nil) ? "" : lastIPConnection!
         self.createdAt = createdAt
-        self.updatedOn = updatedOn
+        self.updatedOn = (updatedOn == nil) ? Utils.getTimeNow() : updatedOn!
     }
     
-    public init(from jsonObject: JSON){
-        self.dateFormatter = DateFormatter()
-        
-        self.id = jsonObject["id"].intValue
-        self.email = jsonObject["email"].stringValue
-        self.password = jsonObject["password"].stringValue
-        self.roleId = jsonObject["roleId"].intValue
-        self.firstName = jsonObject["firstName"].stringValue
-        self.lastName = jsonObject["lastName"].stringValue
-        self.status = jsonObject["status"].stringValue
-        self.phoneNumber = jsonObject["phoneNumber"].stringValue
-        self.profilePicture = jsonObject["profilePicture"].stringValue
-        self.sessionToken = jsonObject["sessionToken"].stringValue
-        self.lastIPConnection = jsonObject["lastIPConnection"].stringValue
-        self.createdAt = jsonObject["createdAt"].stringValue
-        self.updatedOn = jsonObject["updatedOn"].stringValue
+    public convenience init(from jsonObject: JSON) {
+            self.init(id: jsonObject["id"].intValue,
+                      email: jsonObject["email"].stringValue,
+                      password: jsonObject["password"].stringValue,
+                      roleId: jsonObject["roleId"].intValue,
+                      firstName: jsonObject["firstName"].stringValue,
+                      lastName: jsonObject["lastName"].stringValue,
+                      status: jsonObject["status"].stringValue,
+                      phoneNumber: jsonObject["phoneNumber"].stringValue,
+                      profilePicture: jsonObject["profilePicture"].stringValue,
+                      sessionToken: jsonObject["sessionToken"].stringValue,
+                      lastIPConnection: jsonObject["lastIPConnection"].stringValue,
+                      createdAt: jsonObject["createdAt"].stringValue,
+                      updatedOn: jsonObject["updatedOn"].stringValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [User] {

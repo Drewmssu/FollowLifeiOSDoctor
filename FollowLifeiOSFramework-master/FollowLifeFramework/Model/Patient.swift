@@ -2,7 +2,6 @@
 //  Patient.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 22/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -21,20 +20,14 @@ public class Patient {
     public var weight: Float
     public var sex: String
     public var height: Float
-    private let dateFormatter: DateFormatter
     
     public init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = 0
         self.userId = 0
         self.planId = 0
-        self.createdAt = dateFormatter.string(from: Date())
+        self.createdAt = Utils.getTimeNow()
         self.status = ""
-        self.updatedAt = dateFormatter.string(from: Date())
+        self.updatedAt = Utils.getTimeNow()
         self.age = ""
         self.bloodType = ""
         self.weight = Float("0.0000")!
@@ -42,55 +35,46 @@ public class Patient {
         self.height = Float("0.0000")!
     }
     
-    public init(id: Int, userId: Int,  planId: Int, createdAt: Date, status: String, updatedAt: Date, age: String, bloodType: String, weight: Float, sex: String, height: Float) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
+    public init(id: Int, userId: Int,  planId: Int?, createdAt: Date, status: String, updatedAt: Date, age: String?, bloodType: String?, weight: Float?, sex: String?, height: Float?) {
         self.id = id
         self.userId = userId
-        self.planId = planId
-        self.createdAt = dateFormatter.string(from: createdAt)
+        self.planId = (planId == nil) ? 0 : planId!
+        self.createdAt = Utils.convertTime(from: createdAt)
         self.status = status
-        self.updatedAt = dateFormatter.string(from: updatedAt)
-        self.age = age
-        self.bloodType = bloodType
-        self.weight = weight
-        self.sex = sex
-        self.height = height
+        self.updatedAt = Utils.convertTime(from: updatedAt)
+        self.age = (age == nil) ? "" : age!
+        self.bloodType = (bloodType == nil) ? "" : bloodType!
+        self.weight = (weight == nil) ? Float("0.0000")! : weight!
+        self.sex = (sex == nil) ? "" : sex!
+        self.height = (height == nil) ? Float("0.0000")! : height!
     }
     
-    public init(id: Int, userId: Int,  planId: Int, createdAt: String, status: String, updatedAt: String, age: String, bloodType: String, weight: Float, sex: String, height: Float) {
-        self.dateFormatter = DateFormatter()
-        
+    public init(id: Int, userId: Int,  planId: Int?, createdAt: String, status: String, updatedAt: String, age: String?, bloodType: String?, weight: Float?, sex: String?, height: Float?) {
         self.id = id
         self.userId = userId
-        self.planId = planId
+        self.planId = (planId == nil) ? 0 : planId!
         self.createdAt = createdAt
         self.status = status
         self.updatedAt = updatedAt
-        self.age = age
-        self.bloodType = bloodType
-        self.weight = weight
-        self.sex = sex
-        self.height = height
+        self.age = (age == nil) ? "" : age!
+        self.bloodType = (bloodType == nil) ? "" : bloodType!
+        self.weight = (weight == nil) ? Float("0.0000")! : weight!
+        self.sex = (sex == nil) ? "" : sex!
+        self.height = (height == nil) ? Float("0.0000")! : height!
     }
     
-    public init(from jsonObject: JSON){
-        self.dateFormatter = DateFormatter()
-        
-        self.id = jsonObject["id"].intValue
-        self.userId = jsonObject["userId"].intValue
-        self.planId = jsonObject["planId"].intValue
-        self.createdAt = jsonObject["createdAt"].stringValue
-        self.status = jsonObject["status"].stringValue
-        self.updatedAt = jsonObject["updatedAt"].stringValue
-        self.age = jsonObject["age"].stringValue
-        self.bloodType = jsonObject["bloodType"].stringValue
-        self.weight = jsonObject["weight"].floatValue
-        self.sex = jsonObject["sex"].stringValue
-        self.height = jsonObject["height"].floatValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  userId: jsonObject["userId"].intValue,
+                  planId: jsonObject["planId"].intValue,
+                  createdAt: jsonObject["createdAt"].stringValue,
+                  status: jsonObject["status"].stringValue,
+                  updatedAt: jsonObject["updatedAt"].stringValue,
+                  age: jsonObject["age"].stringValue,
+                  bloodType: jsonObject["bloodType"].stringValue,
+                  weight: jsonObject["weight"].floatValue,
+                  sex: jsonObject["sex"].stringValue,
+                  height: jsonObject["height"].floatValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [Patient] {

@@ -2,7 +2,6 @@
 //  District.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 23/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -23,9 +22,9 @@ public class District {
         self.name = name
     }
     
-    public init(from jsonObject: JSON){
-        self.id = jsonObject["id"].intValue
-        self.name = jsonObject["name"].stringValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  name: jsonObject["name"].stringValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [District] {

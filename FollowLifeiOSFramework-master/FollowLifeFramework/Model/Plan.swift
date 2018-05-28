@@ -2,7 +2,6 @@
 //  Plan.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 23/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -26,22 +25,22 @@ public class Plan {
         self.price = Float("0.0000")!
     }
     
-    public init(id: Int, code: String, name: String, description: String, acceptedPatients: Int, price: Float) {
+    public init(id: Int, code: String, name: String, description: String?, acceptedPatients: Int?, price: Float?) {
         self.id = id
         self.code = code
         self.name = name
-        self.description = description
-        self.acceptedPatients = acceptedPatients
-        self.price = price
+        self.description = (description == nil) ? "" : description!
+        self.acceptedPatients = (acceptedPatients == nil) ? 0 : acceptedPatients!
+        self.price = (price == nil) ? Float("0.0000")! : price!
     }
     
-    public init(from jsonObject: JSON){
-        self.id = jsonObject["id"].intValue
-        self.code = jsonObject["code"].stringValue
-        self.name = jsonObject["name"].stringValue
-        self.description = jsonObject["description"].stringValue
-        self.acceptedPatients = jsonObject["acceptedPatients"].intValue
-        self.price = jsonObject["price"].floatValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  code: jsonObject["code"].stringValue,
+                  name: jsonObject["name"].stringValue,
+                  description: jsonObject["description"].stringValue,
+                  acceptedPatients: jsonObject["acceptedPatients"].intValue,
+                  price: jsonObject["price"].floatValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [Plan] {

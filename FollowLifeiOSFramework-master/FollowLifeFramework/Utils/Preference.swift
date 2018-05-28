@@ -1,21 +1,17 @@
 //
-//  File.swift
+//  Preference.swift
 //  FollowLifeFramework
 //
-//  Created by Hugo Andres on 26/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
 import Foundation
 
 public class Preference {
-    private let preferences: UserDefaults
+    private static let preferences: UserDefaults = UserDefaults.standard
     
-    public init() {
-        preferences = UserDefaults.standard
-    }
     
-    public func saveData(key: String, value: String) {
+    public static func saveData(key: String, value: String) {
         preferences.set(value, forKey: key)
         
         let didSave = preferences.synchronize()
@@ -25,13 +21,13 @@ public class Preference {
         }
     }
     
-    public func retreiveData(key: String) -> String {
+    public static func retreiveData(key: String) -> String {
         let value: String = preferences.string(forKey: key)!
         
         return value
     }
     
-    public func retreiveData(key: String) -> Int {
+    public static func retreiveData(key: String) -> Int {
         let value: Int = preferences.integer(forKey: key)
         
         return value

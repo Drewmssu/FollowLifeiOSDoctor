@@ -2,7 +2,6 @@
 //  Doctor.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 22/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -18,64 +17,49 @@ public class Doctor {
     public var medicIdentification: String
     public var updatedAt: String
     public var addressId: Int
-    private let dateFormatter: DateFormatter
     
     public init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = 0
         self.userId = 0
         self.planId = 0
         self.status = ""
-        self.createdAt = dateFormatter.string(from: Date())
+        self.createdAt = Utils.getTimeNow()
         self.medicIdentification = ""
-        self.updatedAt = dateFormatter.string(from: Date())
+        self.updatedAt = Utils.getTimeNow()
         self.addressId = 0
     }
     
-    public init(id: Int, userId: Int, planId: Int, status: String, createdAt: Date, medicIdentification: String, updatedAt: Date, addressId: Int) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
+    public init(id: Int, userId: Int, planId: Int, status: String, createdAt: Date, medicIdentification: String?, updatedAt: Date?, addressId: Int?) {
         self.id = id
         self.userId = userId
         self.planId = planId
         self.status = status
-        self.createdAt = dateFormatter.string(from: createdAt)
-        self.medicIdentification = medicIdentification
-        self.updatedAt = dateFormatter.string(from: updatedAt)
-        self.addressId = addressId
+        self.createdAt = Utils.convertTime(from: createdAt)
+        self.medicIdentification = (medicIdentification == nil) ? "" : medicIdentification!
+        self.updatedAt = Utils.convertTime(from: updatedAt)
+        self.addressId = (addressId == nil) ? 0 : addressId!
     }
     
-    public init(id: Int, userId: Int, planId: Int, status: String, createdAt: String, medicIdentification: String, updatedAt: String, addressId: Int) {
-        self.dateFormatter = DateFormatter()
-        
+    public init(id: Int, userId: Int, planId: Int, status: String, createdAt: String, medicIdentification: String?, updatedAt: String?, addressId: Int?) {
         self.id = id
         self.userId = userId
         self.planId = planId
         self.status = status
         self.createdAt = createdAt
-        self.medicIdentification = medicIdentification
-        self.updatedAt = updatedAt
-        self.addressId = addressId
+        self.medicIdentification = (medicIdentification == nil) ? "" : medicIdentification!
+        self.updatedAt = (updatedAt == nil) ? Utils.getTimeNow() : updatedAt!
+        self.addressId = (addressId == nil) ? 0 : addressId!
     }
     
-    public init(from jsonObject: JSON){
-        self.dateFormatter = DateFormatter()
-        
-        self.id = jsonObject["id"].intValue
-        self.userId = jsonObject["userId"].intValue
-        self.planId = jsonObject["planId"].intValue
-        self.status = jsonObject["status"].stringValue
-        self.createdAt = jsonObject["createdAt"].stringValue
-        self.medicIdentification = jsonObject["medicIdentification"].stringValue
-        self.updatedAt = jsonObject["updatedAt"].stringValue
-        self.addressId = jsonObject["addressId"].intValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  userId: jsonObject["userId"].intValue,
+                  planId: jsonObject["planId"].intValue,
+                  status: jsonObject["status"].stringValue,
+                  createdAt: jsonObject["createdAt"].stringValue,
+                  medicIdentification: jsonObject["medicIdentification"].stringValue,
+                  updatedAt: jsonObject["updatedAt"].stringValue,
+                  addressId: jsonObject["addressId"].intValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [Doctor] {

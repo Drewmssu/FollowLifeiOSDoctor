@@ -2,7 +2,6 @@
 //  Item.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 23/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -18,14 +17,8 @@ public class Item {
     public var durationInDays: Int
     public var description: String
     public var createdAt: String
-    private let dateFormatter: DateFormatter
     
     public init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = 0
         self.prescriptionId = 0
         self.itemTypeId = 0
@@ -33,49 +26,40 @@ public class Item {
         self.quantity = 0
         self.durationInDays = 0
         self.description = ""
-        self.createdAt = dateFormatter.string(from: Date())
+        self.createdAt = Utils.getTimeNow()
     }
     
-    public init(id: Int, prescriptionId: Int, itemTypeId: Int, frequency: String, quantity: Int, durationInDays: Int, description: String, createdAt: Date) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
+    public init(id: Int, prescriptionId: Int, itemTypeId: Int?, frequency: String?, quantity: Int?, durationInDays: Int?, description: String?, createdAt: Date) {
         self.id = id
         self.prescriptionId = prescriptionId
-        self.itemTypeId = itemTypeId
-        self.frequency = frequency
-        self.quantity = quantity
-        self.durationInDays = durationInDays
-        self.description = description
-        self.createdAt = dateFormatter.string(from: createdAt)
+        self.itemTypeId = (itemTypeId == nil) ? 0 : itemTypeId!
+        self.frequency = (frequency == nil) ? "" : frequency!
+        self.quantity = (quantity == nil) ? 0 : quantity!
+        self.durationInDays = (durationInDays == nil) ? 0 : durationInDays!
+        self.description = (description == nil) ? "" : description!
+        self.createdAt = Utils.convertTime(from: createdAt)
     }
     
-    public init(id: Int, prescriptionId: Int, itemTypeId: Int, frequency: String, quantity: Int, durationInDays: Int, description: String, createdAt: String) {
-        self.dateFormatter = DateFormatter()
-        
+    public init(id: Int, prescriptionId: Int, itemTypeId: Int?, frequency: String?, quantity: Int?, durationInDays: Int?, description: String?, createdAt: String) {
         self.id = id
         self.prescriptionId = prescriptionId
-        self.itemTypeId = itemTypeId
-        self.frequency = frequency
-        self.quantity = quantity
-        self.durationInDays = durationInDays
-        self.description = description
+        self.itemTypeId = (itemTypeId == nil) ? 0 : itemTypeId!
+        self.frequency = (frequency == nil) ? "" : frequency!
+        self.quantity = (quantity == nil) ? 0 : quantity!
+        self.durationInDays = (durationInDays == nil) ? 0 : durationInDays!
+        self.description = (description == nil) ? "" : description!
         self.createdAt = createdAt
     }
     
-    public init(from jsonObject: JSON){
-        self.dateFormatter = DateFormatter()
-        
-        self.id = jsonObject["id"].intValue
-        self.prescriptionId = jsonObject["prescriptionId"].intValue
-        self.itemTypeId = jsonObject["itemTypeId"].intValue
-        self.frequency = jsonObject["frequency"].stringValue
-        self.quantity = jsonObject["quantity"].intValue
-        self.durationInDays = jsonObject["durationInDays"].intValue
-        self.description = jsonObject["description"].stringValue
-        self.createdAt = jsonObject["createdAt"].stringValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  prescriptionId: jsonObject["prescriptionId"].intValue,
+                  itemTypeId: jsonObject["itemTypeId"].intValue,
+                  frequency: jsonObject["frequency"].stringValue,
+                  quantity: jsonObject["quantity"].intValue,
+                  durationInDays: jsonObject["durationInDays"].intValue,
+                  description: jsonObject["description"].stringValue,
+                  createdAt: jsonObject["createdAt"].stringValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [Item] {

@@ -2,7 +2,6 @@
 //  DoctorMedicalSpeciality.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 23/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -26,10 +25,10 @@ public class DoctorMedicalSpeciality {
         self.medicalSpeciality = medicalSpeciality
     }
     
-    public init(from jsonObject: JSON){
-        self.id = jsonObject["id"].intValue
-        self.doctorId = jsonObject["doctorId"].intValue
-        self.medicalSpeciality = jsonObject["medicalSpeciality"].intValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  doctorId: jsonObject["doctorId"].intValue,
+                  medicalSpeciality: jsonObject["medicalSpeciality"].intValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [DoctorMedicalSpeciality] {

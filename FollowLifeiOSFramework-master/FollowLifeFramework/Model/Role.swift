@@ -2,7 +2,6 @@
 //  Role.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 22/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -26,10 +25,10 @@ public class Role {
         self.shortName = shortName
     }
     
-    public init(from jsonObject: JSON){
-        self.id = jsonObject["id"].intValue
-        self.name = jsonObject["name"].stringValue
-        self.shortName = jsonObject["shortName"].stringValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  name: jsonObject["name"].stringValue,
+                  shortName: jsonObject["shortName"].stringValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [Role] {

@@ -2,7 +2,6 @@
 //  Membership.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 22/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -18,49 +17,33 @@ public class Membership {
     public var createdAt: String
     public var expiresAt: String
     public var status: String
-    private let dateFormatter: DateFormatter
     
     public init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = 0
         self.doctorId = 0
         self.patientId = 0
         self.referenceEmail = ""
         self.token = ""
-        self.createdAt = dateFormatter.string(from: Date())
-        self.expiresAt = dateFormatter.string(from: Date())
+        self.createdAt = Utils.getTimeNow()
+        self.expiresAt = Utils.getTimeNow()
         self.status = ""
     }
     
-    public init(id: Int, doctorId: Int, patientId: Int, referenceEmail: String, token: String, createdAt: Date, expiresAt: Date, status: String) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
+    public init(id: Int, doctorId: Int, patientId: Int?, referenceEmail: String, token: String, createdAt: Date, expiresAt: Date, status: String) {
         self.id = id
         self.doctorId = doctorId
-        self.patientId = patientId
+        self.patientId = (patientId == nil) ? 0 : patientId!
         self.referenceEmail = referenceEmail
         self.token = token
-        self.createdAt = dateFormatter.string(from: createdAt)
-        self.expiresAt = dateFormatter.string(from: expiresAt)
+        self.createdAt = Utils.convertTime(from: createdAt)
+        self.expiresAt = Utils.convertTime(from: expiresAt)
         self.status = status
     }
     
-    public init(id: Int, doctorId: Int, patientId: Int, referenceEmail: String, token: String, createdAt: String, expiresAt: String, status: String) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
+    public init(id: Int, doctorId: Int, patientId: Int?, referenceEmail: String, token: String, createdAt: String, expiresAt: String, status: String) {
         self.id = id
         self.doctorId = doctorId
-        self.patientId = patientId
+        self.patientId = (patientId == nil) ? 0 : patientId!
         self.referenceEmail = referenceEmail
         self.token = token
         self.createdAt = createdAt
@@ -68,17 +51,15 @@ public class Membership {
         self.status = status
     }
     
-    public init(from jsonObject: JSON){
-        self.dateFormatter = DateFormatter()
-        
-        self.id = jsonObject["id"].intValue
-        self.doctorId = jsonObject["doctorId"].intValue
-        self.patientId = jsonObject["patientId"].intValue
-        self.referenceEmail = jsonObject["referenceEmail"].stringValue
-        self.token = jsonObject["token"].stringValue
-        self.createdAt = jsonObject["createdAt"].stringValue
-        self.expiresAt = jsonObject["expiresAt"].stringValue
-        self.status = jsonObject["status"].stringValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  doctorId: jsonObject["doctorId"].intValue,
+                  patientId: jsonObject["patientId"].intValue,
+                  referenceEmail: jsonObject["referenceEmail"].stringValue,
+                  token: jsonObject["token"].stringValue,
+                  createdAt: jsonObject["createdAt"].stringValue,
+                  expiresAt: jsonObject["expiresAt"].stringValue,
+                  status: jsonObject["status"].stringValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [Membership] {

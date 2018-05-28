@@ -2,7 +2,6 @@
 //  Indicator.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 23/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -17,44 +16,28 @@ public class Indicator {
     public var createdAt: String
     public var indicatorTypeId: Int
     public var frequency: String
-    private let dateFormatter: DateFormatter
     
     public init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = 0
         self.patientId = 0
         self.unitOfMeasurementId = 0
         self.quantity = Float("0.0000")!
-        self.createdAt = dateFormatter.string(from: Date())
+        self.createdAt = Utils.getTimeNow()
         self.indicatorTypeId = 0
         self.frequency = ""
     }
     
     public init(id: Int, patientId: Int, unitOfMeasurementId: Int, quantity: Float, createdAt: Date, indicatorTypeId: Int, frequency: String) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = id
         self.patientId = patientId
         self.unitOfMeasurementId = unitOfMeasurementId
         self.quantity = quantity
-        self.createdAt = dateFormatter.string(from: createdAt)
+        self.createdAt = Utils.convertTime(from: createdAt)
         self.indicatorTypeId = indicatorTypeId
         self.frequency = frequency
     }
     
     public init(id: Int, patientId: Int, unitOfMeasurementId: Int, quantity: Float, createdAt: String, indicatorTypeId: Int, frequency: String) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = id
         self.patientId = patientId
         self.unitOfMeasurementId = unitOfMeasurementId
@@ -64,16 +47,14 @@ public class Indicator {
         self.frequency = frequency
     }
     
-    public init(from jsonObject: JSON){
-        self.dateFormatter = DateFormatter()
-        
-        self.id = jsonObject["id"].intValue
-        self.patientId = jsonObject["patientId"].intValue
-        self.unitOfMeasurementId = jsonObject["unitOfMeasurementId"].intValue
-        self.quantity = jsonObject["quantity"].floatValue
-        self.createdAt = jsonObject["createdAt"].stringValue
-        self.indicatorTypeId = jsonObject["indicatorTypeId"].intValue
-        self.frequency = jsonObject["frequency"].stringValue
+    public convenience init(from jsonObject: JSON) {
+        self.init( id: jsonObject["id"].intValue,
+                  patientId: jsonObject["patientId"].intValue,
+                  unitOfMeasurementId: jsonObject["unitOfMeasurementId"].intValue,
+                  quantity: jsonObject["quantity"].floatValue,
+                  createdAt: jsonObject["createdAt"].stringValue,
+                  indicatorTypeId: jsonObject["indicatorTypeId"].intValue,
+                  frequency: jsonObject["frequency"].stringValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [Indicator] {

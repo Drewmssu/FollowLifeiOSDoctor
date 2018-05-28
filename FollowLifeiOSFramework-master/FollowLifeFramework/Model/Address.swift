@@ -2,7 +2,6 @@
 //  Address.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 23/05/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -19,14 +18,8 @@ public class Address {
     public var status: String
     public var createdAt: String
     public var updatedAt: String
-    private let dateFormatter: DateFormatter
     
     public init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
         self.id = 0
         self.districtId = 0
         self.street = ""
@@ -34,53 +27,44 @@ public class Address {
         self.complement = ""
         self.number = ""
         self.status = ""
-        self.createdAt = dateFormatter.string(from: Date())
-        self.updatedAt = dateFormatter.string(from: Date())
+        self.createdAt = Utils.getTimeNow()
+        self.updatedAt = Utils.getTimeNow()
     }
     
-    public init(id: Int, districtId: Int, street: String, neighborhood: String, complement: String, number: String, status: String, createdAt: Date, updatedAt: Date) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        self.dateFormatter.timeStyle = .medium
-        self.dateFormatter.dateStyle = .long
-        
+    public init(id: Int, districtId: Int, street: String, neighborhood: String, complement: String?, number: String, status: String, createdAt: Date, updatedAt: Date) {
         self.id = id
         self.districtId = districtId
         self.street = street
         self.neighborhood = neighborhood
-        self.complement = complement
+        self.complement = (complement == nil) ? "" : complement!
         self.number = number
         self.status = status
-        self.createdAt = dateFormatter.string(from: createdAt)
-        self.updatedAt = dateFormatter.string(from: updatedAt)
+        self.createdAt = Utils.convertTime(from: createdAt)
+        self.updatedAt = Utils.convertTime(from: updatedAt)
     }
     
-    public init(id: Int, districtId: Int, street: String, neighborhood: String, complement: String, number: String, status: String, createdAt: String, updatedAt: String) {
-        self.dateFormatter = DateFormatter()
-        
+    public init(id: Int, districtId: Int, street: String, neighborhood: String, complement: String?, number: String, status: String, createdAt: String, updatedAt: String) {
         self.id = id
         self.districtId = districtId
         self.street = street
         self.neighborhood = neighborhood
-        self.complement = complement
+        self.complement = (complement == nil) ? "" : complement!
         self.number = number
         self.status = status
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
     
-    public init(from jsonObject: JSON){
-        self.dateFormatter = DateFormatter()
-        
-        self.id = jsonObject["id"].intValue
-        self.districtId = jsonObject["districtId"].intValue
-        self.street = jsonObject["street"].stringValue
-        self.neighborhood = jsonObject["neighborhood"].stringValue
-        self.complement = jsonObject["complement"].stringValue
-        self.number = jsonObject["number"].stringValue
-        self.status = jsonObject["status"].stringValue
-        self.createdAt = jsonObject["createdAt"].stringValue
-        self.updatedAt = jsonObject["updatedAt"].stringValue
+    public convenience init(from jsonObject: JSON) {
+        self.init(id: jsonObject["id"].intValue,
+                  districtId: jsonObject["districtId"].intValue,
+                  street: jsonObject["street"].stringValue,
+                  neighborhood: jsonObject["neighborhood"].stringValue,
+                  complement: jsonObject["complement"].stringValue,
+                  number: jsonObject["number"].stringValue,
+                  status: jsonObject["status"].stringValue,
+                  createdAt: jsonObject["createdAt"].stringValue,
+                  updatedAt: jsonObject["updatedAt"].stringValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [Address] {

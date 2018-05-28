@@ -10,6 +10,9 @@
 		4009375920B9AC6700BF359A /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009375820B9AC6700BF359A /* Preference.swift */; };
 		4009375A20B9AC6700BF359A /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009375820B9AC6700BF359A /* Preference.swift */; };
 		4009375B20B9AC6700BF359A /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009375820B9AC6700BF359A /* Preference.swift */; };
+		4009378A20BC959100BF359A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009378920BC959100BF359A /* Utils.swift */; };
+		4009378B20BC959100BF359A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009378920BC959100BF359A /* Utils.swift */; };
+		4009378C20BC959100BF359A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009378920BC959100BF359A /* Utils.swift */; };
 		40DB0BF420B91CF200A3AB2D /* FollowLifeFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 40DB0BF220B91CF200A3AB2D /* FollowLifeFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40DB0C0F20B91D5C00A3AB2D /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB0BFC20B91D5B00A3AB2D /* Membership.swift */; };
 		40DB0C1020B91D5C00A3AB2D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB0BFD20B91D5B00A3AB2D /* Patient.swift */; };
@@ -187,6 +190,7 @@
 
 /* Begin PBXFileReference section */
 		4009375820B9AC6700BF359A /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		4009378920BC959100BF359A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		40DB0BEF20B91CF200A3AB2D /* FollowLifeFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FollowLifeFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DB0BF220B91CF200A3AB2D /* FollowLifeFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowLifeFramework.h; sourceTree = "<group>"; };
 		40DB0BF320B91CF200A3AB2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				4009375820B9AC6700BF359A /* Preference.swift */,
+				4009378920BC959100BF359A /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				40DB0C1920B91D5C00A3AB2D /* UnitOfMeasurement.swift in Sources */,
 				40DB0C1820B91D5C00A3AB2D /* IndicatorEntry.swift in Sources */,
 				40DB0C1020B91D5C00A3AB2D /* Patient.swift in Sources */,
+				4009378A20BC959100BF359A /* Utils.swift in Sources */,
 				40DB0C1720B91D5C00A3AB2D /* Indicator.swift in Sources */,
 				40DB0C2520B91D7B00A3AB2D /* LogoApi.swift in Sources */,
 				40DB0C2020B91D5C00A3AB2D /* Doctor.swift in Sources */,
@@ -691,6 +697,7 @@
 				40DB0C8420B91F1500A3AB2D /* DoctorMedicalSpeciality.swift in Sources */,
 				40DB0C7C20B91EFF00A3AB2D /* Appointment.swift in Sources */,
 				40DB0C9420B91F3E00A3AB2D /* Patient.swift in Sources */,
+				4009378B20BC959100BF359A /* Utils.swift in Sources */,
 				40DB0C8820B91F1F00A3AB2D /* IndicatorEntry.swift in Sources */,
 				40DB0CA220B91F6000A3AB2D /* LogoApi.swift in Sources */,
 				40DB0C8020B91F0A00A3AB2D /* District.swift in Sources */,
@@ -720,6 +727,7 @@
 				40DB0C8520B91F1500A3AB2D /* DoctorMedicalSpeciality.swift in Sources */,
 				40DB0C7D20B91EFF00A3AB2D /* Appointment.swift in Sources */,
 				40DB0C9520B91F3E00A3AB2D /* Patient.swift in Sources */,
+				4009378C20BC959100BF359A /* Utils.swift in Sources */,
 				40DB0C8920B91F2000A3AB2D /* IndicatorEntry.swift in Sources */,
 				40DB0CA320B91F6100A3AB2D /* LogoApi.swift in Sources */,
 				40DB0C8120B91F0B00A3AB2D /* District.swift in Sources */,
