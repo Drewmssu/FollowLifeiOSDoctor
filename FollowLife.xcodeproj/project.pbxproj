@@ -17,7 +17,6 @@
 		28E433FA208D235000B2EBAC /* FollowLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E433F9208D235000B2EBAC /* FollowLifeUITests.swift */; };
 		28E4340E208D34AD00B2EBAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4340D208D34AD00B2EBAC /* LoginViewModel.swift */; };
 		28E43412208D35A700B2EBAC /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E43411208D35A700B2EBAC /* LoginModel.swift */; };
-		4000D90A20B704570061BBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4000D90820B704570061BBC9 /* Main.storyboard */; };
 		4000D91A20B7056E0061BBC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90B20B7056D0061BBC9 /* ProfileViewController.swift */; };
 		4000D91B20B7056E0061BBC9 /* prescriptionFormAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90C20B7056D0061BBC9 /* prescriptionFormAllViewController.swift */; };
 		4000D91C20B7056E0061BBC9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90D20B7056D0061BBC9 /* RegisterViewController.swift */; };
@@ -39,6 +38,7 @@
 		40DB0CEA20B9290000A3AB2D /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40DB0CB020B9233200A3AB2D /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40DB0CED20B9290A00A3AB2D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DB0CD720B9234F00A3AB2D /* Alamofire.framework */; };
 		40DB0CEE20B9290A00A3AB2D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40DB0CD720B9234F00A3AB2D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40EEDA0820BE815F00D3126D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40EEDA0620BE815F00D3126D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,25 +231,25 @@
 		28E433FB208D235000B2EBAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28E4340D208D34AD00B2EBAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		28E43411208D35A700B2EBAC /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		4000D90920B704570061BBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../example_doctor/FollowLife/Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4000D90B20B7056D0061BBC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
-		4000D90C20B7056D0061BBC9 /* prescriptionFormAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = prescriptionFormAllViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/prescriptionFormAllViewController.swift; sourceTree = "<group>"; };
-		4000D90D20B7056D0061BBC9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/RegisterViewController.swift; sourceTree = "<group>"; };
-		4000D90E20B7056D0061BBC9 /* PrescriptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrescriptionTypeViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/PrescriptionTypeViewController.swift; sourceTree = "<group>"; };
-		4000D90F20B7056D0061BBC9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
-		4000D91020B7056D0061BBC9 /* prescriptionFormMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = prescriptionFormMedViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/prescriptionFormMedViewController.swift; sourceTree = "<group>"; };
-		4000D91120B7056D0061BBC9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
-		4000D91220B7056D0061BBC9 /* ChoosePackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePackageViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/ChoosePackageViewController.swift; sourceTree = "<group>"; };
-		4000D91320B7056E0061BBC9 /* ChooseRoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseRoleViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/ChooseRoleViewController.swift; sourceTree = "<group>"; };
-		4000D91420B7056E0061BBC9 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarTableViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/CalendarTableViewController.swift; sourceTree = "<group>"; };
-		4000D91520B7056E0061BBC9 /* PatientsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientsProfileViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/PatientsProfileViewController.swift; sourceTree = "<group>"; };
-		4000D91620B7056E0061BBC9 /* RescheduledAppointmentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RescheduledAppointmentDetailsViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/RescheduledAppointmentDetailsViewController.swift; sourceTree = "<group>"; };
-		4000D91720B7056E0061BBC9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/CalendarViewController.swift; sourceTree = "<group>"; };
-		4000D91820B7056E0061BBC9 /* ChoosePackage2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePackage2ViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/ChoosePackage2ViewController.swift; sourceTree = "<group>"; };
-		4000D91920B7056E0061BBC9 /* AppointmentDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentDetailsTableViewController.swift; path = ../../../example_doctor/FollowLife/ViewControllers/AppointmentDetailsTableViewController.swift; sourceTree = "<group>"; };
+		4000D90B20B7056D0061BBC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4000D90C20B7056D0061BBC9 /* prescriptionFormAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prescriptionFormAllViewController.swift; sourceTree = "<group>"; };
+		4000D90D20B7056D0061BBC9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4000D90E20B7056D0061BBC9 /* PrescriptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionTypeViewController.swift; sourceTree = "<group>"; };
+		4000D90F20B7056D0061BBC9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4000D91020B7056D0061BBC9 /* prescriptionFormMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prescriptionFormMedViewController.swift; sourceTree = "<group>"; };
+		4000D91120B7056D0061BBC9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4000D91220B7056D0061BBC9 /* ChoosePackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePackageViewController.swift; sourceTree = "<group>"; };
+		4000D91320B7056E0061BBC9 /* ChooseRoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseRoleViewController.swift; sourceTree = "<group>"; };
+		4000D91420B7056E0061BBC9 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
+		4000D91520B7056E0061BBC9 /* PatientsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsProfileViewController.swift; sourceTree = "<group>"; };
+		4000D91620B7056E0061BBC9 /* RescheduledAppointmentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescheduledAppointmentDetailsViewController.swift; sourceTree = "<group>"; };
+		4000D91720B7056E0061BBC9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		4000D91820B7056E0061BBC9 /* ChoosePackage2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePackage2ViewController.swift; sourceTree = "<group>"; };
+		4000D91920B7056E0061BBC9 /* AppointmentDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentDetailsTableViewController.swift; sourceTree = "<group>"; };
 		40DB0CA420B9233100A3AB2D /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "FollowLifeiOSFramework-master/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		40DB0CBD20B9234100A3AB2D /* FollowLifeFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FollowLifeFramework.xcodeproj; path = "FollowLifeiOSFramework-master/FollowLifeFramework.xcodeproj"; sourceTree = "<group>"; };
 		40DB0CCB20B9234F00A3AB2D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "FollowLifeiOSFramework-master/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		40EEDA0720BE815F00D3126D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,7 +387,7 @@
 		4000D90720B7039E0061BBC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4000D90820B704570061BBC9 /* Main.storyboard */,
+				40EEDA0620BE815F00D3126D /* Main.storyboard */,
 				28E433E2208D235000B2EBAC /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -675,7 +675,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4000D90A20B704570061BBC9 /* Main.storyboard in Resources */,
+				40EEDA0820BE815F00D3126D /* Main.storyboard in Resources */,
 				28E433E4208D235000B2EBAC /* LaunchScreen.storyboard in Resources */,
 				28E433E1208D235000B2EBAC /* Assets.xcassets in Resources */,
 			);
@@ -781,10 +781,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		4000D90820B704570061BBC9 /* Main.storyboard */ = {
+		40EEDA0620BE815F00D3126D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4000D90920B704570061BBC9 /* Base */,
+				40EEDA0720BE815F00D3126D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
