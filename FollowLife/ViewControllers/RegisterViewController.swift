@@ -12,8 +12,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInLabel: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var alreadyHaveAnAccountButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,26 +22,16 @@ class RegisterViewController: UIViewController {
         emailTextField.setBottomBorder()
         passwordTextField.setBottomBorder()
         signUpButton.layer.cornerRadius = 5
-
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(gestureRecognizer:)))
-        signInLabel.addGestureRecognizer(tapGestureRecognizer)
-        
     }
     
-    @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
-        self.present(nextViewController, animated:true, completion:nil)
-        
-        
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func alreadyHaveAnAccountAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

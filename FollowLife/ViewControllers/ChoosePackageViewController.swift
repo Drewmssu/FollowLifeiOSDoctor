@@ -9,7 +9,7 @@ import UIKit
 
 class ChoosePackageViewController: UIViewController {
     @IBOutlet weak var optionButton: UIButton!
-    @IBOutlet weak var proOptionLabel: UILabel!
+    @IBOutlet weak var nextPlanButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,28 +22,17 @@ class ChoosePackageViewController: UIViewController {
         optionButton.layer.cornerRadius = 5
         optionButton.layer.borderWidth = 1
         optionButton.layer.borderColor = UIColor.white.cgColor
-
-        // Do any additional setup after loading the view.
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(gestureRecognizer:)))
-        proOptionLabel.addGestureRecognizer(tapGestureRecognizer)
-        
     }
     
-    @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "secondPlan") as! ChoosePackage2ViewController
-        self.present(nextViewController, animated:true, completion:nil)
-        
-        
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func nextPlanAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "showSecondPlanScene", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -13,11 +13,18 @@ import FollowLifeFramework
 class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var signUpLabel: UILabel!
+    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
     
-    @IBAction func signInAction(_ sender: Any) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        emailTextField.setBottomBorder()
+        passwordTextField.setBottomBorder()
+        signInButton.layer.cornerRadius = 5
+    }
+    
+    @IBAction func signInAction(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
         let password = passwordTextField.text, !password.isEmpty else {
             let alert = UIAlertController(title: "We had a problem", message: "You must fill in all the fields.", preferredStyle: UIAlertControllerStyle.alert)
@@ -41,48 +48,22 @@ class LoginViewController: UIViewController {
                 let jsonObject: JSON = JSON(value)
                 if statusCode == 200 {
                     Preference.saveData(key: "token", value: jsonObject["SessionToken"].stringValue)
-                    self.performSegue(withIdentifier: "showHome", sender: self)
+                    self.performSegue(withIdentifier: "showHomeScene", sender: self)
                 } else if statusCode == 401 ||  statusCode == 404 {
-                    let alert = UIAlertController(title: "Incorrect Credentials", message: "Please, try again.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    let incorrectCredentialAlert = UIAlertController(title: "Incorrect Credentials", message: jsonObject["Message"].stringValue, preferredStyle: UIAlertControllerStyle.alert)
+                    incorrectCredentialAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(incorrectCredentialAlert, animated: true, completion: nil)
                 } else {
-                    let alert = UIAlertController(title: "We had a problem", message: "We had some technical probles. Please, try again in a few minutes.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                }
-            }
-        }.responseString { (response) in
-            let statusCode = response.response?.statusCode
-            
-            switch response.result {
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-                
-            case .success(let value):
-                if statusCode == 401 ||  statusCode == 404 {
-                    let alert = UIAlertController(title: "Incorrect Credentials", message: "\(value). Please, try again.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                } else {
-                    let alert = UIAlertController(title: "We had a problem", message: "We had some technical probles. Please, try again in a few minutes.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    let problemAlert = UIAlertController(title: "We had a problem", message: "We had some technical probles. Please, try again in a few minutes.", preferredStyle: UIAlertControllerStyle.alert)
+                    problemAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(problemAlert, animated: true, completion: nil)
                 }
             }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        emailTextField.setBottomBorder()
-        passwordTextField.setBottomBorder()
-        signInButton.layer.cornerRadius = 5
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(gestureRecognizer:)))
-        signUpLabel.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Register") as! RegisterViewController
-        self.present(nextViewController, animated:true, completion:nil)
+    @IBAction func signUpAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "showRegisterScene", sender: self)
     }
     
     /*

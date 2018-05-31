@@ -9,6 +9,7 @@ import UIKit
 
 class ChoosePackage2ViewController: UIViewController {
     @IBOutlet weak var optionButton: UIButton!
+    @IBOutlet weak var previousPlanButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,18 @@ class ChoosePackage2ViewController: UIViewController {
         optionButton.layer.borderColor = UIColor.white.cgColor
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func optionAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "showHomeScene", sender: self)
+    }
     
+    @IBAction func previousPlanAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
