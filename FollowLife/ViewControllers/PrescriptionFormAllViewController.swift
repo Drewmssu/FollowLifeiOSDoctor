@@ -7,7 +7,7 @@
 
 import UIKit
 
-class prescriptionFormAllViewController: UIViewController {
+class PrescriptionFormAllViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

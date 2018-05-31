@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6Ix-0b-TIv">
-                                <rect key="frame" x="16" y="266" width="343" height="136"/>
+                                <rect key="frame" x="16" y="265.5" width="343" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iB-kK-EYQ">
                                         <rect key="frame" x="0.0" y="0.0" width="36.5" height="21.5"/>
@@ -429,7 +429,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE YOUR PLAN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54L-FN-JrH">
-                                <rect key="frame" x="72" y="72" width="230" height="82"/>
+                                <rect key="frame" x="72.5" y="72" width="230" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="VmG-iF-Fw2"/>
                                 </constraints>
@@ -1268,7 +1268,7 @@
         <!--PRESCRIPTION FORM-->
         <scene sceneID="E1v-nB-fuJ">
             <objects>
-                <viewController storyboardIdentifier="prescriptionFormMed" id="HPx-o8-VYr" customClass="prescriptionFormMedViewController" customModule="FollowLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="prescriptionFormMed" id="HPx-o8-VYr" customClass="PrescriptionFormMedViewController" customModule="FollowLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hos-pX-7BR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1279,17 +1279,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iL-3e-MnA">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="23.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Medication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yP-eE-mnl">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="23.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="mUe-tZ-BUB"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name of Medication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yP-eE-mnl">
+                                                <rect key="frame" x="0.0" y="0.0" width="301" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTX-7F-M0r">
-                                                <rect key="frame" x="160" y="0.0" width="183" height="23.5"/>
+                                                <rect key="frame" x="301" y="0.0" width="42" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="textColor" red="0.41960784309999999" green="0.80392156859999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1416,7 +1413,7 @@
         <!--PRESCRIPTION FORM-->
         <scene sceneID="VZl-e7-jDU">
             <objects>
-                <viewController storyboardIdentifier="prescriptionFormAll" id="qbn-kq-Cuw" customClass="prescriptionFormAllViewController" customModule="FollowLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="prescriptionFormAll" id="qbn-kq-Cuw" customClass="PrescriptionFormAllViewController" customModule="FollowLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="62T-8e-9eZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1427,17 +1424,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8E-Kk-ZWY">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="23.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9G-Fs-hn7">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="23.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="bCp-0I-oKY"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9G-Fs-hn7">
+                                                <rect key="frame" x="0.0" y="0.0" width="301" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-L0-Ghz">
-                                                <rect key="frame" x="160" y="0.0" width="183" height="23.5"/>
+                                                <rect key="frame" x="301" y="0.0" width="42" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="textColor" red="0.41960784309999999" green="0.80392156859999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1759,7 +1753,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE YOUR PLAN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g3-7G-Vf6">
-                                <rect key="frame" x="72" y="72" width="230" height="82"/>
+                                <rect key="frame" x="72.5" y="72" width="230" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="AKg-qM-sgp"/>
                                 </constraints>
@@ -2240,6 +2234,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="7YQ-gx-rcf" secondAttribute="bottom" constant="8" id="2oB-b5-7dj"/>
                                                 <constraint firstItem="BO9-im-Y4g" firstAttribute="centerY" secondItem="LDX-I1-VTc" secondAttribute="centerY" id="D5r-54-Cpm"/>
+                                                <constraint firstItem="BO9-im-Y4g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LDX-I1-VTc" secondAttribute="leading" constant="20" symbolic="YES" id="FR9-wM-6CI"/>
                                                 <constraint firstAttribute="trailing" secondItem="BO9-im-Y4g" secondAttribute="trailing" constant="8" id="SyE-a2-iD1"/>
                                                 <constraint firstItem="7YQ-gx-rcf" firstAttribute="top" secondItem="LDX-I1-VTc" secondAttribute="top" constant="8" id="bv3-5G-FAl"/>
                                                 <constraint firstItem="7YQ-gx-rcf" firstAttribute="leading" secondItem="LDX-I1-VTc" secondAttribute="leading" constant="8" id="enV-Ri-0Fh"/>

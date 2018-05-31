@@ -7,7 +7,7 @@
 
 import UIKit
 
-class prescriptionFormMedViewController: UIViewController {
+class PrescriptionFormMedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
