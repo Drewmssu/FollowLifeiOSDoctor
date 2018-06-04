@@ -37,7 +37,8 @@ class LoginViewController: UIViewController {
         let headers = ["Accept": "application/json"]
         let parameters = ["Email" : email, "Password": password, "DeviceToken": "String"]
         
-        Alamofire.request("\(FollowLifeApi.doctorsUrl)/login", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request("\(FollowLifeApi.doctorsUrl)/login", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .responseJSON { (response) in
             let statusCode = response.response?.statusCode
             
             switch response.result {

@@ -348,6 +348,7 @@
                                             <color key="titleColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="signUpAction:" destination="1es-D0-feu" eventType="touchUpInside" id="enG-vF-WOk"/>
                                             <segue destination="PEx-Yn-wAb" kind="show" identifier="showFirstPlanScene" id="5mk-aj-TU5"/>
                                         </connections>
                                     </button>
