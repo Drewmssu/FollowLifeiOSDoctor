@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MapKit
 import FollowLifeFramework
 
 class ProfileViewController: UIViewController {
@@ -27,6 +28,7 @@ class ProfileViewController: UIViewController {
     let email: String = Preference.retreiveData(key: "email")
     let token: String = Preference.retreiveData(key: "token")
     let idDoctor: String = Preference.retreiveData(key: "idDoctor")
+
     
     var specialtiesList: [String] = [String]()
     var cancelButton:UIBarButtonItem = UIBarButtonItem()
@@ -35,12 +37,15 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.specialtyPicker.delegate = self
         self.specialtyPicker.dataSource = self
+        self.specialtyPicker.showsSelectionIndicator = true
         self.specialtyPicker.isHidden = true
         doneButton = UIBarButtonItem.init(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ProfileViewController.doneClicked))
         spaceButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         cancelButton = UIBarButtonItem.init(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ProfileViewController.cancelClicked))
+        
         createSpecialityPicker()
         loadSpecialties()
         
@@ -157,7 +162,7 @@ class ProfileViewController: UIViewController {
     
     @objc func cancelClicked() {
         print("it works")
-        self.specialtyPicker.isHidden = true
+        self.view.endEditing(true)
     }
     
     @objc func doneClicked() {
@@ -225,13 +230,11 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func editSpecialityAction(_ sender: UIButton) {
-        if self.specialtyPicker.isHidden {
-            self.specialtyPicker.isHidden = false
+        if specialtyPicker.isHidden {
+            specialtyPicker.isHidden = false
         }
     }
-    
-    @IBAction func editAdressAction(_ sender: UIButton) {
-    }
+
     
 
     
