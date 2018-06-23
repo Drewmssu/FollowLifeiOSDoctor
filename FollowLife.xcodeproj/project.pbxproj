@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		282AF0522091EBA500C9357E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF0512091EBA500C9357E /* HomeViewModel.swift */; };
-		2839888B208E955F0066BC85 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839888A208E955F0066BC85 /* RegisterViewModel.swift */; };
 		28C5EC3120D870DF00606950 /* ChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C5EC3020D870DF00606950 /* ChooseAddressViewController.swift */; };
-		28C5EC3520D8809200606950 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C5EC3420D8809200606950 /* LocationSearchTable.swift */; };
+		28D189B220DC7E68006716FB /* PrescriptionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D189B120DC7E68006716FB /* PrescriptionListTableViewController.swift */; };
+		28D189C420DCCD99006716FB /* ChooseAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D189C320DCCD99006716FB /* ChooseAddressViewModel.swift */; };
+		28D189CA20DCD796006716FB /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D189C920DCD796006716FB /* ProfileViewModel.swift */; };
 		28E433D7208D234F00B2EBAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E433D6208D234F00B2EBAC /* AppDelegate.swift */; };
 		28E433DF208D234F00B2EBAC /* FollowLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28E433DD208D234F00B2EBAC /* FollowLife.xcdatamodeld */; };
 		28E433E1208D235000B2EBAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E433E0208D235000B2EBAC /* Assets.xcassets */; };
@@ -217,10 +217,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		282AF0512091EBA500C9357E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		2839888A208E955F0066BC85 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		28C5EC3020D870DF00606950 /* ChooseAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAddressViewController.swift; sourceTree = "<group>"; };
-		28C5EC3420D8809200606950 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		28D189B120DC7E68006716FB /* PrescriptionListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionListTableViewController.swift; sourceTree = "<group>"; };
+		28D189C320DCCD99006716FB /* ChooseAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAddressViewModel.swift; sourceTree = "<group>"; };
+		28D189C920DCD796006716FB /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		28E433D3208D234F00B2EBAC /* FollowLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E433D6208D234F00B2EBAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28E433DE208D234F00B2EBAC /* FollowLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FollowLife.xcdatamodel; sourceTree = "<group>"; };
@@ -360,8 +360,8 @@
 			isa = PBXGroup;
 			children = (
 				28E4340D208D34AD00B2EBAC /* LoginViewModel.swift */,
-				2839888A208E955F0066BC85 /* RegisterViewModel.swift */,
-				282AF0512091EBA500C9357E /* HomeViewModel.swift */,
+				28D189C320DCCD99006716FB /* ChooseAddressViewModel.swift */,
+				28D189C920DCD796006716FB /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 				4000D91020B7056D0061BBC9 /* PrescriptionFormMedViewController.swift */,
 				4000D90B20B7056D0061BBC9 /* ProfileViewController.swift */,
 				28C5EC3020D870DF00606950 /* ChooseAddressViewController.swift */,
-				28C5EC3420D8809200606950 /* LocationSearchTable.swift */,
+				28D189B120DC7E68006716FB /* PrescriptionListTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -709,6 +709,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4000D91C20B7056E0061BBC9 /* RegisterViewController.swift in Sources */,
+				28D189B220DC7E68006716FB /* PrescriptionListTableViewController.swift in Sources */,
+				28D189C420DCCD99006716FB /* ChooseAddressViewModel.swift in Sources */,
 				4000D91B20B7056E0061BBC9 /* PrescriptionFormAllViewController.swift in Sources */,
 				4000D92520B7056E0061BBC9 /* RescheduledAppointmentDetailsViewController.swift in Sources */,
 				28E433D7208D234F00B2EBAC /* AppDelegate.swift in Sources */,
@@ -716,17 +718,15 @@
 				28E43412208D35A700B2EBAC /* LoginModel.swift in Sources */,
 				4000D92420B7056E0061BBC9 /* PatientsProfileViewController.swift in Sources */,
 				4000D92120B7056E0061BBC9 /* ChoosePackageViewController.swift in Sources */,
-				28C5EC3520D8809200606950 /* LocationSearchTable.swift in Sources */,
-				2839888B208E955F0066BC85 /* RegisterViewModel.swift in Sources */,
 				4000D92320B7056E0061BBC9 /* CalendarTableViewController.swift in Sources */,
 				4000D92620B7056E0061BBC9 /* CalendarViewController.swift in Sources */,
 				4000D92720B7056E0061BBC9 /* ChoosePackage2ViewController.swift in Sources */,
 				4000D91F20B7056E0061BBC9 /* PrescriptionFormMedViewController.swift in Sources */,
 				28E433DF208D234F00B2EBAC /* FollowLife.xcdatamodeld in Sources */,
+				28D189CA20DCD796006716FB /* ProfileViewModel.swift in Sources */,
 				4000D91A20B7056E0061BBC9 /* ProfileViewController.swift in Sources */,
 				4000D91E20B7056E0061BBC9 /* HomeViewController.swift in Sources */,
 				28C5EC3120D870DF00606950 /* ChooseAddressViewController.swift in Sources */,
-				282AF0522091EBA500C9357E /* HomeViewModel.swift in Sources */,
 				4000D92820B7056E0061BBC9 /* AppointmentDetailsTableViewController.swift in Sources */,
 				4000D91D20B7056E0061BBC9 /* PrescriptionTypeViewController.swift in Sources */,
 				4000D92020B7056E0061BBC9 /* LoginViewController.swift in Sources */,

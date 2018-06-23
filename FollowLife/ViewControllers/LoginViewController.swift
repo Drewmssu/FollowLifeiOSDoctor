@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
                 if statusCode == 200 {
                     Preference.saveData(key: "token", value: jsonObject["Result"]["SessionToken"].stringValue)
                     let fullName = jsonObject["Result"]["FirstName"].stringValue + " " + jsonObject["Result"]["LastName"].stringValue
+                    print(jsonObject["Result"]["SessionToken"].stringValue)
                     
                     Preference.saveData(key: "idDoctor", value: jsonObject["Result"]["Id"].stringValue)
                     Preference.saveData(key: "fullName", value: fullName)
