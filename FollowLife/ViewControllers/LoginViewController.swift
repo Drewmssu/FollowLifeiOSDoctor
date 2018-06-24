@@ -40,7 +40,15 @@ class LoginViewController: UIViewController {
             case .success(let value):
                 let jsonObject: JSON = JSON(value)
                 if statusCode == 200 {
-                    Preference.saveData(key: "token", value: jsonObject["SessionToken"].stringValue)
+                    //Preference.saveData(key: "token", value: jsonObject["SessionToken"].stringValue)
+                    //Preference.saveData(key: "userId", value: "\(jsonObject["Id"])")
+                    print("\(jsonObject)")
+                    let user = UserModel(id: jsonObject["Result"]["Id"].intValue, name: jsonObject["Result"]["FirstName"].stringValue, token: jsonObject["Result"]["SessionToken"].stringValue)
+                    let userDefaults = UserDefaults.standard
+                    let encodeData: Data = NSKeyedArchiver.archivedData(withRootObject: user)
+                    userDefaults.set(encodeData, forKey: "user")
+                    userDefaults.synchronize()
+                    
                     self.performSegue(withIdentifier: "showHome", sender: self)
                 } else if statusCode == 401 ||  statusCode == 404 {
                     let alert = UIAlertController(title: "Incorrect Credentials", message: "Please, try again.", preferredStyle: UIAlertControllerStyle.alert)
@@ -85,15 +93,13 @@ class LoginViewController: UIViewController {
         self.present(nextViewController, animated:true, completion:nil)
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 }
 
 extension UITextField {

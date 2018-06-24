@@ -10,7 +10,6 @@ import Foundation
 public class Preference {
     private static let preferences: UserDefaults = UserDefaults.standard
     
-    
     public static func saveData(key: String, value: String) {
         preferences.set(value, forKey: key)
         
@@ -21,13 +20,13 @@ public class Preference {
         }
     }
     
-    public static func retreiveData(key: String) -> String {
+    public static func retreiveStringData(key: String) -> String {
         let value: String = preferences.string(forKey: key)!
         
         return value
     }
     
-    public static func retreiveData(key: String) -> Int {
+    public static func retreiveIntData(key: String) -> Int {
         let value: Int = preferences.integer(forKey: key)
         
         return value
