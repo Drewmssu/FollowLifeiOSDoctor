@@ -55,6 +55,14 @@ class CalendarTableViewController: UITableViewController {
             print(error)
         }
     }
+    
+    
+    @IBAction func addAppointment(_ sender: UIBarButtonItem) {
+        
+        let addVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "EditAppointment") as! AddAppointmentViewController
+        addVC.delegate = self
+        self.present(addVC, animated: true, completion: nil)
+    }
 }
 
 //MARK: - Datasource
@@ -78,13 +86,24 @@ extension CalendarTableViewController {
 
 //MARK: TableView Delegate
 extension CalendarTableViewController {
-    /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     
-     }*/
+     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let appointmentDetailVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "appointmentDetails") as! AppointmentDetailsTableViewController
+        appointmentDetailVC.delegate = self
+        /*appointmentDetailVC.dateLabel.text = self.appoitmentList[indexPath.row].appointmentDate
+        appointmentDetailVC.nameLabel.text = self.appoitmentList[indexPath.row].patientName
+        appointmentDetailVC.reasonLabel.text = self.appoitmentList[indexPath.row].reason*/
+        self.present(appointmentDetailVC, animated: true, completion: nil)
+     }
 }
 
 extension CalendarTableViewController: AddAppointmentDelegate {
     func reloadData() {
         self.loadData()
+    }
+}
+
+extension CalendarTableViewController: CancelAppointmentDelegate {
+    func deleteAppointment() {
+        
     }
 }

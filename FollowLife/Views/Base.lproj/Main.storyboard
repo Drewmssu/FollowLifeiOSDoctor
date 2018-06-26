@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -766,35 +764,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="56.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mr. Donovan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOb-Hh-vMj">
-                                            <rect key="frame" x="128" y="19" width="141" height="19"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
-                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00 PM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAm-yM-Bey">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00 PM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAm-yM-Bey">
                                             <rect key="frame" x="16" y="8" width="55.5" height="41"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="O4f-vD-4Yb"/>
-                                                <constraint firstAttribute="height" constant="40" id="hCK-QR-H4x">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="32"/>
-                                                </constraint>
-                                            </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="O4f-vD-4Yb"/>
-                                                    <exclude reference="hCK-QR-H4x"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="constraints">
-                                                    <exclude reference="O4f-vD-4Yb"/>
-                                                    <exclude reference="hCK-QR-H4x"/>
-                                                </mask>
-                                            </variation>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGD-2p-loR">
                                             <rect key="frame" x="317" y="16" width="24" height="24"/>
@@ -807,46 +781,36 @@
                                                 <action selector="deleteAppoitnment:" destination="AZ7-Kp-uFU" eventType="touchUpInside" id="qGV-UM-b7F"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. Donovan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOb-Hh-vMj">
+                                            <rect key="frame" x="92" y="18" width="100" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="qYc-vA-tN2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="AOb-Hh-vMj" secondAttribute="bottom" constant="8" id="4SM-LM-kKv"/>
-                                        <constraint firstAttribute="bottom" secondItem="DAm-yM-Bey" secondAttribute="bottom" constant="8" id="4TX-UK-20a"/>
-                                        <constraint firstItem="DAm-yM-Bey" firstAttribute="leading" secondItem="TOA-7J-b1L" secondAttribute="leading" constant="16" id="7BC-S9-EZp"/>
-                                        <constraint firstItem="DAm-yM-Bey" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="top" constant="8" id="ZT4-Qk-7M2"/>
+                                        <constraint firstAttribute="bottom" secondItem="AOb-Hh-vMj" secondAttribute="bottom" constant="19.5" id="AiY-u2-5e5"/>
+                                        <constraint firstItem="AOb-Hh-vMj" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="top" constant="18" id="Fbn-ae-VyC"/>
+                                        <constraint firstItem="AOb-Hh-vMj" firstAttribute="leading" secondItem="DAm-yM-Bey" secondAttribute="trailing" constant="20.5" id="Hle-ah-OZH"/>
+                                        <constraint firstItem="DAm-yM-Bey" firstAttribute="leading" secondItem="TOA-7J-b1L" secondAttribute="leading" constant="16" id="PAV-eV-zSX"/>
+                                        <constraint firstItem="DAm-yM-Bey" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="top" constant="8" id="QfA-eD-SIA"/>
+                                        <constraint firstAttribute="bottom" secondItem="DAm-yM-Bey" secondAttribute="bottom" constant="7.5" id="U1K-Gq-GoR"/>
                                         <constraint firstAttribute="trailing" secondItem="VGD-2p-loR" secondAttribute="trailing" id="Zi1-zy-dGy"/>
-                                        <constraint firstAttribute="trailing" secondItem="AOb-Hh-vMj" secondAttribute="trailing" constant="72" id="gQX-2J-OdI"/>
-                                        <constraint firstItem="AOb-Hh-vMj" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="topMargin" constant="8" id="hTT-1l-5It"/>
-                                        <constraint firstItem="AOb-Hh-vMj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DAm-yM-Bey" secondAttribute="trailing" constant="64" id="iCG-9U-Sbr">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="8" symbolic="YES"/>
-                                        </constraint>
                                         <constraint firstItem="VGD-2p-loR" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="top" constant="16" id="qWd-Pc-w2p"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
-                                            <exclude reference="AOb-Hh-vMj"/>
                                             <exclude reference="DAm-yM-Bey"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <exclude reference="4TX-UK-20a"/>
-                                            <exclude reference="7BC-S9-EZp"/>
-                                            <exclude reference="ZT4-Qk-7M2"/>
-                                            <exclude reference="4SM-LM-kKv"/>
-                                            <exclude reference="hTT-1l-5It"/>
-                                            <exclude reference="iCG-9U-Sbr"/>
+                                            <exclude reference="AOb-Hh-vMj"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="subviews">
-                                            <include reference="AOb-Hh-vMj"/>
                                             <include reference="DAm-yM-Bey"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <include reference="4TX-UK-20a"/>
-                                            <include reference="7BC-S9-EZp"/>
-                                            <include reference="ZT4-Qk-7M2"/>
-                                            <include reference="4SM-LM-kKv"/>
-                                            <include reference="hTT-1l-5It"/>
-                                            <include reference="iCG-9U-Sbr"/>
+                                            <include reference="AOb-Hh-vMj"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -869,7 +833,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="HgE-RJ-35K"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6gz-yZ-6Xs">
                             <connections>
-                                <segue destination="VHy-Tn-UOg" kind="presentation" id="f2E-Am-5im"/>
+                                <action selector="addAppointment:" destination="BEO-MM-lfD" id="iFS-BU-g32"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -884,7 +848,7 @@
         <!--APPOINTMENT DETAIL-->
         <scene sceneID="EqF-VY-9S9">
             <objects>
-                <viewController storyboardIdentifier="appointmentDetails" id="lPZ-OD-4nP" customClass="AppointmentDetailsTableViewController" customModule="FollowLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="appointmentDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-OD-4nP" customClass="AppointmentDetailsTableViewController" customModule="FollowLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aEr-TC-2is">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1085,17 +1049,33 @@
                                     <constraint firstItem="oN5-Ej-rzd" firstAttribute="leading" secondItem="Cxm-bk-3l7" secondAttribute="leading" id="uuD-Nz-9gn"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-zK-JYU">
+                                <rect key="frame" x="16" y="563" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.41568627450000001" green="0.80000000000000004" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Knp-jO-yVk"/>
+                                    <constraint firstAttribute="height" constant="40" id="rli-bI-leD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneAction:" destination="lPZ-OD-4nP" eventType="touchUpInside" id="eBD-ld-mku"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3Zk-Ld-WOe" firstAttribute="trailing" secondItem="63V-wD-2yR" secondAttribute="trailing" constant="16" id="1wR-Ag-LCw"/>
                             <constraint firstItem="Cxm-bk-3l7" firstAttribute="trailing" secondItem="efw-HD-hRs" secondAttribute="trailing" id="EHU-mC-yka"/>
                             <constraint firstItem="Cxm-bk-3l7" firstAttribute="top" secondItem="efw-HD-hRs" secondAttribute="bottom" constant="8" symbolic="YES" id="GQg-oo-R7A"/>
+                            <constraint firstItem="3Zk-Ld-WOe" firstAttribute="trailing" secondItem="2pe-zK-JYU" secondAttribute="trailing" constant="16" id="Gy6-TX-48Q"/>
                             <constraint firstItem="3Zk-Ld-WOe" firstAttribute="bottom" secondItem="63V-wD-2yR" secondAttribute="bottom" constant="16" id="Jc5-v2-OwB"/>
                             <constraint firstItem="efw-HD-hRs" firstAttribute="trailing" secondItem="3Zk-Ld-WOe" secondAttribute="trailing" id="Re8-Mz-onp"/>
                             <constraint firstItem="efw-HD-hRs" firstAttribute="top" secondItem="3Zk-Ld-WOe" secondAttribute="top" id="T4Z-9G-lLe"/>
+                            <constraint firstItem="63V-wD-2yR" firstAttribute="top" secondItem="2pe-zK-JYU" secondAttribute="bottom" constant="8" id="W1d-zN-qJw"/>
                             <constraint firstItem="Cxm-bk-3l7" firstAttribute="leading" secondItem="efw-HD-hRs" secondAttribute="leading" id="WtB-J9-2Qf"/>
                             <constraint firstItem="efw-HD-hRs" firstAttribute="leading" secondItem="3Zk-Ld-WOe" secondAttribute="leading" id="apN-Vp-3bt"/>
+                            <constraint firstItem="2pe-zK-JYU" firstAttribute="leading" secondItem="3Zk-Ld-WOe" secondAttribute="leading" constant="16" id="b3s-y0-UWm"/>
                             <constraint firstItem="63V-wD-2yR" firstAttribute="leading" secondItem="3Zk-Ld-WOe" secondAttribute="leading" constant="16" id="kpF-un-N0h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Zk-Ld-WOe"/>
@@ -1105,11 +1085,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelAppointmentButton" destination="63V-wD-2yR" id="i8V-RX-huT"/>
+                        <outlet property="dateLabel" destination="i2u-qG-xbQ" id="DWX-Gh-kaD"/>
+                        <outlet property="nameLabel" destination="Fr7-Ug-n01" id="DJx-4G-ef9"/>
+                        <outlet property="reasonLabel" destination="tRc-9Z-zfI" id="eim-Zp-NCO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7s-Vj-hUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2713" y="2603"/>
+            <point key="canvasLocation" x="2529" y="2603"/>
         </scene>
         <!--PRESCRIPTION TYPE-->
         <scene sceneID="F4c-o4-HSY">
@@ -2118,7 +2101,7 @@
         <!--Add Appointment View Controller-->
         <scene sceneID="PjG-zS-a7I">
             <objects>
-                <viewController id="VHy-Tn-UOg" customClass="AddAppointmentViewController" customModule="FollowLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditAppointment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VHy-Tn-UOg" customClass="AddAppointmentViewController" customModule="FollowLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wVx-wB-MB2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2503,7 +2486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lx3-PY-Hdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3540" y="2603"/>
+            <point key="canvasLocation" x="3262" y="2603"/>
         </scene>
     </scenes>
     <resources>

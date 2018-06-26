@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol CancelAppointmentDelegate {
+    func deleteAppointment()
+}
+
 class AppointmentDetailsTableViewController: UIViewController {
     
     @IBOutlet weak var cancelAppointmentButton: UIButton!
-   
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var reasonLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
-  
+    var delegate: CancelAppointmentDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -31,6 +38,11 @@ class AppointmentDetailsTableViewController: UIViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @IBAction func doneAction(_ sender: UIButton) {
+        self.delegate?.deleteAppointment()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
