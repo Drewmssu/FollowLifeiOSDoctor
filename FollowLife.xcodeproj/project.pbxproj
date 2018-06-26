@@ -33,6 +33,10 @@
 		4000D92620B7056E0061BBC9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D91720B7056E0061BBC9 /* CalendarViewController.swift */; };
 		4000D92720B7056E0061BBC9 /* ChoosePackage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D91820B7056E0061BBC9 /* ChoosePackage2ViewController.swift */; };
 		4000D92820B7056E0061BBC9 /* AppointmentDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D91920B7056E0061BBC9 /* AppointmentDetailsTableViewController.swift */; };
+		40D0219920E287A60059CB9A /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0219820E287A60059CB9A /* AppointmentTableViewCell.swift */; };
+		40D0219B20E288500059CB9A /* AddAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0219A20E288500059CB9A /* AddAppointmentViewController.swift */; };
+		40D0219D20E28A040059CB9A /* AppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0219C20E28A040059CB9A /* AppointmentViewModel.swift */; };
+		40D0219F20E28A620059CB9A /* PatientsProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D0219E20E28A620059CB9A /* PatientsProfileTableViewController.swift */; };
 		40DB0CE420B928F700A3AB2D /* FollowLifeFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DB0CC620B9234100A3AB2D /* FollowLifeFramework.framework */; };
 		40DB0CE520B928F700A3AB2D /* FollowLifeFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40DB0CC620B9234100A3AB2D /* FollowLifeFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40DB0CE920B9290000A3AB2D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DB0CB020B9233200A3AB2D /* SwiftyJSON.framework */; };
@@ -248,6 +252,10 @@
 		4000D91720B7056E0061BBC9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		4000D91820B7056E0061BBC9 /* ChoosePackage2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePackage2ViewController.swift; sourceTree = "<group>"; };
 		4000D91920B7056E0061BBC9 /* AppointmentDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentDetailsTableViewController.swift; sourceTree = "<group>"; };
+		40D0219820E287A60059CB9A /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		40D0219A20E288500059CB9A /* AddAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppointmentViewController.swift; sourceTree = "<group>"; };
+		40D0219C20E28A040059CB9A /* AppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewModel.swift; sourceTree = "<group>"; };
+		40D0219E20E28A620059CB9A /* PatientsProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsProfileTableViewController.swift; sourceTree = "<group>"; };
 		40DB0CA420B9233100A3AB2D /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "FollowLifeiOSFramework-master/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		40DB0CBD20B9234100A3AB2D /* FollowLifeFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FollowLifeFramework.xcodeproj; path = "FollowLifeiOSFramework-master/FollowLifeFramework.xcodeproj"; sourceTree = "<group>"; };
 		40DB0CCB20B9234F00A3AB2D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "FollowLifeiOSFramework-master/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
@@ -360,6 +368,7 @@
 				28E4340D208D34AD00B2EBAC /* LoginViewModel.swift */,
 				2839888A208E955F0066BC85 /* RegisterViewModel.swift */,
 				282AF0512091EBA500C9357E /* HomeViewModel.swift */,
+				40D0219C20E28A040059CB9A /* AppointmentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -367,6 +376,7 @@
 		28E43413208D488800B2EBAC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				40D0218720E287780059CB9A /* Cell */,
 				4000D91120B7056D0061BBC9 /* LoginViewController.swift */,
 				4000D90D20B7056D0061BBC9 /* RegisterViewController.swift */,
 				4000D91720B7056E0061BBC9 /* CalendarViewController.swift */,
@@ -383,6 +393,8 @@
 				4000D91020B7056D0061BBC9 /* PrescriptionFormMedViewController.swift */,
 				4000D90B20B7056D0061BBC9 /* ProfileViewController.swift */,
 				28DEDE9A20E21FA900176726 /* PrescriptionListTableViewController.swift */,
+				40D0219A20E288500059CB9A /* AddAppointmentViewController.swift */,
+				40D0219E20E28A620059CB9A /* PatientsProfileTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -394,6 +406,14 @@
 				28E433E2208D235000B2EBAC /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		40D0218720E287780059CB9A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				40D0219820E287A60059CB9A /* AppointmentTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		40DB0CA520B9233100A3AB2D /* Products */ = {
@@ -712,10 +732,13 @@
 				4000D92220B7056E0061BBC9 /* ChooseRoleViewController.swift in Sources */,
 				28E43412208D35A700B2EBAC /* LoginModel.swift in Sources */,
 				4000D92420B7056E0061BBC9 /* PatientsProfileViewController.swift in Sources */,
+				40D0219920E287A60059CB9A /* AppointmentTableViewCell.swift in Sources */,
 				4000D92120B7056E0061BBC9 /* ChoosePackageViewController.swift in Sources */,
 				2839888B208E955F0066BC85 /* RegisterViewModel.swift in Sources */,
 				4000D92320B7056E0061BBC9 /* CalendarTableViewController.swift in Sources */,
 				4000D92620B7056E0061BBC9 /* CalendarViewController.swift in Sources */,
+				40D0219B20E288500059CB9A /* AddAppointmentViewController.swift in Sources */,
+				40D0219F20E28A620059CB9A /* PatientsProfileTableViewController.swift in Sources */,
 				4000D92720B7056E0061BBC9 /* ChoosePackage2ViewController.swift in Sources */,
 				4000D91F20B7056E0061BBC9 /* PrescriptionFormMedViewController.swift in Sources */,
 				28DEDE9B20E21FA900176726 /* PrescriptionListTableViewController.swift in Sources */,
@@ -724,6 +747,7 @@
 				4000D91E20B7056E0061BBC9 /* HomeViewController.swift in Sources */,
 				282AF0522091EBA500C9357E /* HomeViewModel.swift in Sources */,
 				4000D92820B7056E0061BBC9 /* AppointmentDetailsTableViewController.swift in Sources */,
+				40D0219D20E28A040059CB9A /* AppointmentViewModel.swift in Sources */,
 				4000D91D20B7056E0061BBC9 /* ChoosePrescriptionTypeViewController.swift in Sources */,
 				4000D92020B7056E0061BBC9 /* LoginViewController.swift in Sources */,
 				28E4340E208D34AD00B2EBAC /* LoginViewModel.swift in Sources */,
