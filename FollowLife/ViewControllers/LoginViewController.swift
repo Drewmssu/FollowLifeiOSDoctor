@@ -46,9 +46,15 @@ class LoginViewController: UIViewController {
                 print("Error: \(error.localizedDescription)")
                 
             case .success(let value):
-                let jsonObject: JSON = JSON(value)
+                let jsonObject: JSON = JSON(value)["Result"]
                 if statusCode == 200 {
                     Preference.saveData(key: "token", value: jsonObject["SessionToken"].stringValue)
+                    let fullName = jsonObject["FirstName"].stringValue + " " + jsonObject["LastName"].stringValue
+                    Preference.saveData(key: "idDoctor", value: jsonObject["Id"].stringValue)
+                    Preference.saveData(key: "fullName", value: fullName)
+                    Preference.saveData(key: "email", value: jsonObject["Email"].stringValue)
+                    Preference.saveData(key: "phoneNumber", value: jsonObject["PhoneNumber"].stringValue)
+                    
                     self.performSegue(withIdentifier: "showHomeScene", sender: self)
                 } else if statusCode == 401 ||  statusCode == 404 {
                     let incorrectCredentialAlert = UIAlertController(title: "Incorrect Credentials", message: jsonObject["Message"].stringValue, preferredStyle: UIAlertControllerStyle.alert)
