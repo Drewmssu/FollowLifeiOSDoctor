@@ -315,6 +315,35 @@ class ProfileViewController: UIViewController {
         
         
     }
+    
+    
+    func logOut(){
+        
+        
+        Alamofire.request("\(FollowLifeApi.patientsUrl)/logout", method: .get, encoding: JSONEncoding.default, headers: ["X-FLLWLF-TOKEN": self.token, "Accept": "application/json"]).responseJSON { (response) in
+            
+            let statusCode = response.response?.statusCode
+            
+            switch response.result {
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+                
+            case .success(let value):
+                
+                let jsonObject: JSON = JSON(value)
+                print(statusCode)
+                if statusCode == 200 {
+                    
+                    
+                }
+                else {
+                    
+                    self.showErrorMessage()
+                }
+                
+            }
+        }
+    }
 }
 
 

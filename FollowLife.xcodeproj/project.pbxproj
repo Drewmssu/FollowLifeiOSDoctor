@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		282AF0522091EBA500C9357E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282AF0512091EBA500C9357E /* HomeViewModel.swift */; };
 		2839888B208E955F0066BC85 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839888A208E955F0066BC85 /* RegisterViewModel.swift */; };
+		28DEDE9B20E21FA900176726 /* PrescriptionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DEDE9A20E21FA900176726 /* PrescriptionListTableViewController.swift */; };
 		28E433D7208D234F00B2EBAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E433D6208D234F00B2EBAC /* AppDelegate.swift */; };
 		28E433DF208D234F00B2EBAC /* FollowLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28E433DD208D234F00B2EBAC /* FollowLife.xcdatamodeld */; };
 		28E433E1208D235000B2EBAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E433E0208D235000B2EBAC /* Assets.xcassets */; };
@@ -20,7 +21,7 @@
 		4000D91A20B7056E0061BBC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90B20B7056D0061BBC9 /* ProfileViewController.swift */; };
 		4000D91B20B7056E0061BBC9 /* PrescriptionFormAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90C20B7056D0061BBC9 /* PrescriptionFormAllViewController.swift */; };
 		4000D91C20B7056E0061BBC9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90D20B7056D0061BBC9 /* RegisterViewController.swift */; };
-		4000D91D20B7056E0061BBC9 /* PrescriptionTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90E20B7056D0061BBC9 /* PrescriptionTypeViewController.swift */; };
+		4000D91D20B7056E0061BBC9 /* ChoosePrescriptionTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90E20B7056D0061BBC9 /* ChoosePrescriptionTypeViewController.swift */; };
 		4000D91E20B7056E0061BBC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D90F20B7056D0061BBC9 /* HomeViewController.swift */; };
 		4000D91F20B7056E0061BBC9 /* PrescriptionFormMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D91020B7056D0061BBC9 /* PrescriptionFormMedViewController.swift */; };
 		4000D92020B7056E0061BBC9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000D91120B7056D0061BBC9 /* LoginViewController.swift */; };
@@ -217,6 +218,7 @@
 /* Begin PBXFileReference section */
 		282AF0512091EBA500C9357E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2839888A208E955F0066BC85 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		28DEDE9A20E21FA900176726 /* PrescriptionListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionListTableViewController.swift; sourceTree = "<group>"; };
 		28E433D3208D234F00B2EBAC /* FollowLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E433D6208D234F00B2EBAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28E433DE208D234F00B2EBAC /* FollowLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FollowLife.xcdatamodel; sourceTree = "<group>"; };
@@ -234,7 +236,7 @@
 		4000D90B20B7056D0061BBC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4000D90C20B7056D0061BBC9 /* PrescriptionFormAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionFormAllViewController.swift; sourceTree = "<group>"; };
 		4000D90D20B7056D0061BBC9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		4000D90E20B7056D0061BBC9 /* PrescriptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionTypeViewController.swift; sourceTree = "<group>"; };
+		4000D90E20B7056D0061BBC9 /* ChoosePrescriptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePrescriptionTypeViewController.swift; sourceTree = "<group>"; };
 		4000D90F20B7056D0061BBC9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4000D91020B7056D0061BBC9 /* PrescriptionFormMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionFormMedViewController.swift; sourceTree = "<group>"; };
 		4000D91120B7056D0061BBC9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -375,11 +377,12 @@
 				4000D91220B7056D0061BBC9 /* ChoosePackageViewController.swift */,
 				4000D91820B7056E0061BBC9 /* ChoosePackage2ViewController.swift */,
 				4000D91520B7056E0061BBC9 /* PatientsProfileViewController.swift */,
-				4000D90E20B7056D0061BBC9 /* PrescriptionTypeViewController.swift */,
+				4000D90E20B7056D0061BBC9 /* ChoosePrescriptionTypeViewController.swift */,
 				4000D91620B7056E0061BBC9 /* RescheduledAppointmentDetailsViewController.swift */,
 				4000D90C20B7056D0061BBC9 /* PrescriptionFormAllViewController.swift */,
 				4000D91020B7056D0061BBC9 /* PrescriptionFormMedViewController.swift */,
 				4000D90B20B7056D0061BBC9 /* ProfileViewController.swift */,
+				28DEDE9A20E21FA900176726 /* PrescriptionListTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -715,12 +718,13 @@
 				4000D92620B7056E0061BBC9 /* CalendarViewController.swift in Sources */,
 				4000D92720B7056E0061BBC9 /* ChoosePackage2ViewController.swift in Sources */,
 				4000D91F20B7056E0061BBC9 /* PrescriptionFormMedViewController.swift in Sources */,
+				28DEDE9B20E21FA900176726 /* PrescriptionListTableViewController.swift in Sources */,
 				28E433DF208D234F00B2EBAC /* FollowLife.xcdatamodeld in Sources */,
 				4000D91A20B7056E0061BBC9 /* ProfileViewController.swift in Sources */,
 				4000D91E20B7056E0061BBC9 /* HomeViewController.swift in Sources */,
 				282AF0522091EBA500C9357E /* HomeViewModel.swift in Sources */,
 				4000D92820B7056E0061BBC9 /* AppointmentDetailsTableViewController.swift in Sources */,
-				4000D91D20B7056E0061BBC9 /* PrescriptionTypeViewController.swift in Sources */,
+				4000D91D20B7056E0061BBC9 /* ChoosePrescriptionTypeViewController.swift in Sources */,
 				4000D92020B7056E0061BBC9 /* LoginViewController.swift in Sources */,
 				28E4340E208D34AD00B2EBAC /* LoginViewModel.swift in Sources */,
 			);

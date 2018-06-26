@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import Alamofire
+import FollowLifeFramework
+import SwiftyJSON
 
-class PrescriptionTypeViewController: UIViewController {
+
+class ChoosePrescriptionTypeViewController: UIViewController {
 
     @IBOutlet weak var chooseMedicineButton: UIButton!
     @IBOutlet weak var chooseExerciseButton: UIButton!
     @IBOutlet weak var chooseFoodButton: UIButton!
     @IBOutlet weak var chooseOtherTreatment: UIButton!
     
+    
+    var regPrescription:PrescriptionFormAllViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,25 +38,22 @@ class PrescriptionTypeViewController: UIViewController {
         chooseOtherTreatment.layer.cornerRadius = 5
         chooseOtherTreatment.layer.borderWidth = 1
         chooseOtherTreatment.layer.borderColor = UIColor.lightGray.cgColor
-        
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func chooseExercisePrescription(_ sender: UIButton) {
+        
+        Preference.saveData(key: "prescriptionType", value: "2")
     }
-    */
+    
+    @IBAction func chooseFoodPrescription(_ sender: UIButton) {
+         Preference.saveData(key: "prescriptionType", value: "3")
+    }
+    
+    @IBAction func chooseOtherPrescription(_ sender: UIButton) {
+         Preference.saveData(key: "prescriptionType", value: "4")
+    }
+    
+    
 
 }

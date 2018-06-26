@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
         
         emailTextField.setBottomBorder()
         passwordTextField.setBottomBorder()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         signInButton.layer.cornerRadius = 5
     }
     
@@ -73,6 +75,7 @@ class LoginViewController: UIViewController {
         self.performSegue(withIdentifier: "showRegisterScene", sender: self)
     }
     
+     @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }
     /*
     // MARK: - Navigation
 
@@ -96,3 +99,12 @@ extension UITextField {
         self.layer.shadowRadius = 0.0
     }
 }
+
+//extension LoginViewController: UITextFieldDelegate {
+//    
+//    func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//    
+//}
