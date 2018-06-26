@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewControllers/Appointment/AddAppointmentViewController.swift"
-            timestampString = "551547381.942449"
+            timestampString = "551707752.722837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewControllers/Appointment/AddAppointmentViewController.swift"
-            timestampString = "551547381.942495"
+            timestampString = "551707752.722893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewControllers/Appointment/AddAppointmentViewController.swift"
-            timestampString = "551547381.94253"
+            timestampString = "551707752.7229249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
-            timestampString = "551547381.942566"
+            timestampString = "551707752.722955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
@@ -150,59 +150,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
-            timestampString = "551547381.942988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "addAppointment(params:method:token:success:failure:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[2] = Value Promoted from Box&gt; of closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in FollowLife.AppointmentViewModel.addAppointment(params: Swift.Dictionary&lt;Swift.String, Any&gt;, method: Alamofire.HTTPMethod, token: Swift.String, success: (Swift.String) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FollowLife"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juanjesuscuetoyabar/Documents/GitHub/FollowLifeiOSDoctor/FollowLife/ViewModel/ApointmentViewModel.swift"
-                  timestampString = "551502564.095908"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "157">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[2] = Value Promoted from Box&gt; of closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in FollowLife.AppointmentViewModel.addAppointment(params: Swift.Dictionary&lt;Swift.String, Any&gt;, method: Alamofire.HTTPMethod, token: Swift.String, success: (Swift.String) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FollowLife"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juanjesuscuetoyabar/Documents/GitHub/FollowLifeiOSDoctor/FollowLife/ViewModel/ApointmentViewModel.swift"
-                  timestampString = "551502564.097473"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "169">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
-            timestampString = "551547381.943293"
+            timestampString = "551707752.723182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
@@ -218,7 +170,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
-            timestampString = "551547381.943583"
+            timestampString = "551707752.72333"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "addAppointment(params:method:token:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
+            timestampString = "551707752.723473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -234,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
-            timestampString = "551547381.9438781"
+            timestampString = "551707752.723626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -250,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewControllers/Appointment/CalendarTableViewController.swift"
-            timestampString = "551547381.944173"
+            timestampString = "551680888.256544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -298,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewControllers/Appointment/CalendarTableViewController.swift"
-            timestampString = "551547381.944213"
+            timestampString = "551680888.256791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -314,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewControllers/Appointment/Cell/AppointmentTableViewCell.swift"
-            timestampString = "551547381.944249"
+            timestampString = "551680888.2569619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -330,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
-            timestampString = "551547381.944283"
+            timestampString = "551707752.7238621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "addAppointment(params:method:token:success:failure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
-            timestampString = "551547381.944555"
+            timestampString = "551707752.724063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "addAppointment(params:method:token:success:failure:)"
             landmarkType = "7">
             <Locations>
@@ -390,46 +358,46 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FollowLife/ViewModel/ApointmentViewModel.swift"
-            timestampString = "551547381.94482"
+            timestampString = "551707752.724274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "addAppointment(params:method:token:success:failure:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FollowLife.AppointmentViewModel.addAppointment(params: Swift.Dictionary&lt;Swift.String, Any&gt;, method: Alamofire.HTTPMethod, token: Swift.String, success: (Swift.String) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "FollowLife"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juanjesuscuetoyabar/Documents/GitHub/FollowLifeiOSDoctor/FollowLife/ViewModel/ApointmentViewModel.swift"
-                  timestampString = "551547044.359774"
+                  timestampString = "551707752.780406"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "140"
-                  endingLineNumber = "140"
-                  offsetFromSymbolStart = "3673">
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "4610">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "function signature specialization &lt;Arg[2] = Value Promoted from Box&gt; of closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in FollowLife.AppointmentViewModel.addAppointment(params: Swift.Dictionary&lt;Swift.String, Any&gt;, method: Alamofire.HTTPMethod, token: Swift.String, success: (Swift.String) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "FollowLife"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/juanjesuscuetoyabar/Documents/GitHub/FollowLifeiOSDoctor/FollowLife/ViewModel/ApointmentViewModel.swift"
-                  timestampString = "551547044.362608"
+                  timestampString = "551707752.782173"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "141"
-                  endingLineNumber = "141"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
                   offsetFromSymbolStart = "67">
                </Location>
             </Locations>

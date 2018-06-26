@@ -28,6 +28,9 @@ class AddAppointmentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        reasonTextField.layer.borderWidth = 1.0
+        reasonTextField.layer.cornerRadius = 4.0
+        reasonTextField.layer.borderColor = UIColor.cyan.cgColor
         let userDefaults = UserDefaults.standard
         let decoded = userDefaults.object(forKey: "user") as! Data
         user = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! UserModel
@@ -51,9 +54,9 @@ class AddAppointmentViewController: UIViewController {
 
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
         
-        let params: [String : Any] = ["DoctorId" : user.userId, "PatientID" : 7, "Reason" : reasonTextField.text!, "AppointmentId" : appointmentId, "Action" : 1, "AppointmentDate" : "2018-06-23T15:19:16.434Z"]
+        let params: [String : Any] = ["PatientId" : 7, "DoctorId" : user.userId, "AppointmentDate" : "2018-06-30T15:19:16.434Z", "Reason" : reasonTextField.text!, "AppointmentId" : appointmentId, "Action" : 1, ]
         
-        viewModel.addAppointment(params: params, method: .post, token: Preference.retreiveStringData(key: "token"), success: { (message) in
+        viewModel.addAppointment(params: params, method: .post, token: user.token, success: { (message) in
             print(message)
             self.delegate?.reloadData()
             self.dismiss(animated: true, completion: nil)

@@ -116,18 +116,22 @@ class AppointmentViewModel {
     func addAppointment(params: [String : Any], method: HTTPMethod, token: String, success: @escaping (String) -> Void, failure: @escaping (String) -> Void) {
         
         //To delete values
-        var parameters = params
+        var parameters: [String:Any] = [:]
         
         var message: String
-        let header = ["Content-Type" : "application/json" , "X-FLLWLF-TOKEN" : token]
+        let header = ["Accept" : "application-json" , "X-FLLWLF-TOKEN" : token]
         
         var url = FollowLifeApi.doctorsUrl
         if (method == .put || method == .post) {
             if method == .post {
+                parameters["PatientId"] = 1007
+                parameters["DoctorId"] = params["DoctorId"]!
+                parameters["AppointmentDate"] = params["AppointmentDate"]
+                parameters["Reason"] = params["Reason"]
                 url += "/\(params["DoctorId"]!)/appointments"
-                parameters.removeValue(forKey: "Action")
-                parameters.removeValue(forKey: "AppointmentId")
-                print("\(params)")
+                /*parameters.removeValue(forKey: "Action")
+                parameters.removeValue(forKey: "AppointmentId")*/
+                print("\(parameters)")
                 message = "Appointment added"
             } else {
                 url += "/\(params["DoctorId"]!)/appointments/\(params["AppointmentId"])"

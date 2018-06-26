@@ -10,7 +10,7 @@ import UIKit
 
 class AppointmentTableViewCell: UITableViewCell {
 
-    
+    var viewModel = AppointmentViewModel()
     @IBOutlet var patienNameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
@@ -28,5 +28,8 @@ class AppointmentTableViewCell: UITableViewCell {
     func setupViews(appointment: AppointmentCellModel) {
         self.dateLabel.text = appointment.appointmentDate
         self.patienNameLabel.text = appointment.patientName
+    }
+    @IBAction func deleteAppoitnment(_ sender: UIButton) {
+        //viewModel.deleteAppointment(doctorId: <#T##Int#>, appointmentId: <#T##Int#>, token: <#T##String#>, success: <#T##(String) -> Void#>, failure: <#T##(String) -> Void#>)
     }
 }

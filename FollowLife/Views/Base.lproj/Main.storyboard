@@ -796,27 +796,30 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdX-Yh-Elk">
-                                            <rect key="frame" x="317" y="16" width="24" height="25"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGD-2p-loR">
+                                            <rect key="frame" x="317" y="16" width="24" height="24"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="24" id="KKE-qI-mLX"/>
+                                                <constraint firstAttribute="height" constant="24" id="acz-cg-f0h"/>
+                                                <constraint firstAttribute="width" constant="24" id="yRd-Vl-OON"/>
                                             </constraints>
-                                            <state key="normal" title="Button" backgroundImage="calendar-icon"/>
+                                            <state key="normal" title="Button" backgroundImage="trash"/>
+                                            <connections>
+                                                <action selector="deleteAppoitnment:" destination="AZ7-Kp-uFU" eventType="touchUpInside" id="qGV-UM-b7F"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="AOb-Hh-vMj" secondAttribute="bottom" constant="8" id="4SM-LM-kKv"/>
                                         <constraint firstAttribute="bottom" secondItem="DAm-yM-Bey" secondAttribute="bottom" constant="8" id="4TX-UK-20a"/>
                                         <constraint firstItem="DAm-yM-Bey" firstAttribute="leading" secondItem="TOA-7J-b1L" secondAttribute="leading" constant="16" id="7BC-S9-EZp"/>
-                                        <constraint firstAttribute="bottom" secondItem="pdX-Yh-Elk" secondAttribute="bottom" constant="15.5" id="CBk-WO-uOL"/>
-                                        <constraint firstAttribute="trailing" secondItem="pdX-Yh-Elk" secondAttribute="trailing" id="QbO-ix-qW7"/>
                                         <constraint firstItem="DAm-yM-Bey" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="top" constant="8" id="ZT4-Qk-7M2"/>
-                                        <constraint firstItem="pdX-Yh-Elk" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="top" constant="16" id="dnz-dj-oho"/>
+                                        <constraint firstAttribute="trailing" secondItem="VGD-2p-loR" secondAttribute="trailing" id="Zi1-zy-dGy"/>
                                         <constraint firstAttribute="trailing" secondItem="AOb-Hh-vMj" secondAttribute="trailing" constant="72" id="gQX-2J-OdI"/>
                                         <constraint firstItem="AOb-Hh-vMj" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="topMargin" constant="8" id="hTT-1l-5It"/>
                                         <constraint firstItem="AOb-Hh-vMj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DAm-yM-Bey" secondAttribute="trailing" constant="64" id="iCG-9U-Sbr">
                                             <variation key="heightClass=regular-widthClass=compact" constant="8" symbolic="YES"/>
                                         </constraint>
+                                        <constraint firstItem="VGD-2p-loR" firstAttribute="top" secondItem="TOA-7J-b1L" secondAttribute="top" constant="16" id="qWd-Pc-w2p"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
@@ -2504,7 +2507,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar-icon" width="25" height="25"/>
         <image name="cmp-icon" width="25" height="25"/>
         <image name="date-icon" width="25" height="25"/>
         <image name="exercise-icon" width="20" height="20"/>
@@ -2520,6 +2522,7 @@
         <image name="sketch1@4x" width="1172" height="1848"/>
         <image name="sketch@4x" width="1172" height="1848"/>
         <image name="start-icon" width="25" height="25"/>
+        <image name="trash" width="50" height="50"/>
         <image name="treatment-icon" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
