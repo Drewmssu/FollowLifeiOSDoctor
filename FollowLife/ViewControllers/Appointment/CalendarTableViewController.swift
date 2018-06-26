@@ -79,7 +79,8 @@ extension CalendarTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AppointmentTableViewCell
-        cell.setupViews(appointment: appoitmentList[indexPath.row])
+        cell.delegate = self
+        cell.setupViews(appointment: appoitmentList[indexPath.row], user: user)
         return cell
     }
 }
@@ -104,6 +105,6 @@ extension CalendarTableViewController: AddAppointmentDelegate {
 
 extension CalendarTableViewController: CancelAppointmentDelegate {
     func deleteAppointment() {
-        
+        self.loadData()
     }
 }

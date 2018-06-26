@@ -43,19 +43,21 @@ class AppointmentCellModel {
     public var reason: String
     public var status: String
     public var patientName: String
-    
-    init(appointmentDate: String, reason: String?, status: String, patient: String) {
+    public var id: Int
+    init(appointmentDate: String, reason: String?, status: String, patient: String, id: Int) {
         self.appointmentDate = appointmentDate
         self.reason = (reason == nil) ? "" : reason!
         self.status = status
         self.patientName = patient
+        self.id = id
     }
     
     public convenience init(from jsonObject: JSON) {
         self.init(appointmentDate: jsonObject["appointmentDate"].stringValue,
                   reason: jsonObject["reason"].stringValue,
                   status: jsonObject["status"].stringValue,
-                  patient: jsonObject["patient"]["Name"].stringValue)
+                  patient: jsonObject["patient"]["Name"].stringValue,
+                  id: jsonObject["id"].intValue)
     }
     
     public static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [AppointmentCellModel] {
@@ -101,11 +103,13 @@ class AppointmentViewModel {
     
     func deleteAppointment(doctorId: Int, appointmentId: Int, token: String, success: @escaping (String) -> Void, failure: @escaping (String) -> Void) {
         let url = FollowLifeApi.doctorsUrl + "/\(doctorId)/appointments/\(appointmentId)"
-        let header = ["X-FLLWLF-TOKEN" : token]
+        let header = ["Accept" : "application-json" , "X-FLLWLF-TOKEN" : token]
         
         Alamofire.request(url, method: .delete, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (jsonData) in
             switch jsonData.result {
-            case .success(_):
+            case .success(let value):
+                let jsonObject = JSON(value)
+                print("\(jsonObject)")
                 success("Appointment Deleted")
             case .failure(let error):
                 failure(error.localizedDescription)
