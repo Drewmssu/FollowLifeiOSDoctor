@@ -57,6 +57,12 @@ class LoginViewController: UIViewController {
                     Preference.saveData(key: "email", value: jsonObject["Email"].stringValue)
                     Preference.saveData(key: "phoneNumber", value: jsonObject["PhoneNumber"].stringValue)
                     
+                    let user = UserModel(id: jsonObject["Result"]["Id"].intValue, name: jsonObject["Result"]["FirstName"].stringValue, token: jsonObject["Result"]["SessionToken"].stringValue)
+                    let userDefaults = UserDefaults.standard
+                    let encodeData: Data = NSKeyedArchiver.archivedData(withRootObject: user)
+                    userDefaults.set(encodeData, forKey: "user")
+                    userDefaults.synchronize()
+                    
                     self.performSegue(withIdentifier: "showHomeScene", sender: self)
                 } else if statusCode == 401 ||  statusCode == 404 {
                     let incorrectCredentialAlert = UIAlertController(title: "Incorrect Credentials", message: jsonObject["Message"].stringValue, preferredStyle: UIAlertControllerStyle.alert)

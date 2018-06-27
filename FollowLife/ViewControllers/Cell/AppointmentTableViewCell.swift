@@ -2,7 +2,7 @@
 //  AppointmentTableViewCell.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 26/06/18.
+//  Created by Jesus Cueto on 23/06/18.
 //  Copyright © 2018 Hillari Zorrilla Delgado. All rights reserved.
 //
 
@@ -11,6 +11,9 @@ import UIKit
 class AppointmentTableViewCell: UITableViewCell {
     
     var viewModel = AppointmentViewModel()
+    var appoitnmentId: Int?
+    var user: UserModel?
+    var delegate: CancelAppointmentDelegate?
     @IBOutlet var patienNameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
@@ -25,11 +28,18 @@ class AppointmentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupViews(appointment: AppointmentCellModel) {
+    func setupViews(appointment: AppointmentCellModel, user: UserModel) {
         self.dateLabel.text = appointment.appointmentDate
         self.patienNameLabel.text = appointment.patientName
+        self.appoitnmentId = appointment.id
+        self.user = user
     }
     @IBAction func deleteAppoitnment(_ sender: UIButton) {
-        //viewModel.deleteAppointment(doctorId: <#T##Int#>, appointmentId: <#T##Int#>, token: <#T##String#>, success: <#T##(String) -> Void#>, failure: <#T##(String) -> Void#>)
+        viewModel.deleteAppointment(doctorId: (user?.userId)!, appointmentId: appoitnmentId!, token: (user?.token)!, success: { (message) in
+            print("Appointment deleted")
+            self.delegate?.deleteAppointment()
+        }) { (error) in
+            print(error)
+        }
     }
 }

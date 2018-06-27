@@ -19,6 +19,7 @@ class PrescriptionFormMedViewController: UIViewController {
     
     @IBOutlet weak var calendarTextField: UITextField!
     
+    let patientId: String = Preference.retreiveData(key: "idPatient")
     let idDoctor: String = Preference.retreiveData(key: "idDoctor")
     let token: String = Preference.retreiveData(key: "token")
     
@@ -60,7 +61,7 @@ class PrescriptionFormMedViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
-        savePrescription(idPatient: "1")
+        savePrescription(idPatient: self.patientId)
     }
     
     func createPicker(textField : UITextField,picker : UIPickerView) {
@@ -149,6 +150,7 @@ class PrescriptionFormMedViewController: UIViewController {
                 print("pres \(jsonObject) code \(statusCode)")
                 if statusCode == 200 {
                     print("save pres \(jsonObject)")
+                    //self.performSegue(withIdentifier: "showPrescriptionType", sender: nil)
                     self.dismiss(animated: true, completion: nil)
                     //                    self.editSpecialtyButton.isEnabled = false
                     //                    self.specialtyTextField.isUserInteractionEnabled = false

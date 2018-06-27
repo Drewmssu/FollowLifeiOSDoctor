@@ -13,6 +13,7 @@ import SwiftyJSON
 class PrescriptionFormAllViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextView: UITextView!
+    let patientId: String = Preference.retreiveData(key: "idPatient")
     let idDoctor: String = Preference.retreiveData(key: "idDoctor")
     let token: String = Preference.retreiveData(key: "token")
     let prescriptionType: Int = Preference.retreiveData(key: "prescriptionType")
@@ -24,7 +25,7 @@ class PrescriptionFormAllViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
-        savePrescription(idPatient: "1")
+        savePrescription(idPatient: self.patientId)
     }
     
     func getCurrenttime() -> String {
@@ -61,6 +62,9 @@ class PrescriptionFormAllViewController: UIViewController {
         let description = descriptionTextView.text
         
         let parameters = [
+            "Frecuency": "",
+            "Quantity": "",
+            "DurationInDays": "",
             "Description": description,
             "StartedAt": getCurrenttime(),
             "PrescriptionTypeId": Int(prescriptionType)
@@ -81,7 +85,8 @@ class PrescriptionFormAllViewController: UIViewController {
                 
                 if statusCode == 200 {
                     print("save pres \(jsonObject)")
-                    self.dismiss(animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "showPrescriptionType", sender: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     //                    self.editSpecialtyButton.isEnabled = false
                     //                    self.specialtyTextField.isUserInteractionEnabled = false
                     

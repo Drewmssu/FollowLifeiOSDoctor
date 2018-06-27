@@ -2,7 +2,7 @@
 //  AddAppointmentViewController.swift
 //  FollowLife
 //
-//  Created by Hugo Andres on 26/06/18.
+//  Created by Jesus Cueto on 23/06/18.
 //  Copyright © 2018 Hillari Zorrilla Delgado. All rights reserved.
 //
 
