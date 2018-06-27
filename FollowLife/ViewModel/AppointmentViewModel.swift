@@ -138,7 +138,7 @@ class AppointmentViewModel {
                 print("\(parameters)")
                 message = "Appointment added"
             } else {
-                url += "/\(params["DoctorId"]!)/appointments/\(params["AppointmentId"])"
+                url += "/\(params["DoctorId"]!)/appointments/\(String(describing: params["AppointmentId"]))"
                 parameters.removeValue(forKey: "PatientId")
                 parameters.removeValue(forKey: "DoctorId")
                 parameters.removeValue(forKey: "Reason")

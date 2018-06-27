@@ -8,6 +8,13 @@
 import Foundation
 
 public class Utils {
+    // MARK: Headers
+    public static var headers = [
+        "Accept": "application/json",
+        "X-FLLWLF-TOKEN": Preference.retreiveData(key: Constants.Keys.token)
+    ]
+    
+    // MARK: Dateformatter
     private static var dateFormatter: DateFormatter = DateFormatter()
     
     public static func convertTime(from now: Date?) -> String {

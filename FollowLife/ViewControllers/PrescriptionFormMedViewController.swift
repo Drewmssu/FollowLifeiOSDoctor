@@ -11,36 +11,49 @@ import FollowLifeFramework
 import SwiftyJSON
 
 class PrescriptionFormMedViewController: UIViewController {
+    
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var quantityDosisTextField: UITextField!
-    
     @IBOutlet weak var dosageTextField: UITextField!
-    
     @IBOutlet weak var calendarTextField: UITextField!
     
     let patientId: String = Preference.retreiveData(key: "idPatient")
     let idDoctor: String = Preference.retreiveData(key: "idDoctor")
     let token: String = Preference.retreiveData(key: "token")
     
-    var quantityDosisList: [String] = ["1 pill","2 pills","3 pills","4 pills"]
+    /*var quantityDosisList: [String] = ["1 pill","2 pills","3 pills","4 pills"]
     var quantityDosisIntList: [Int] = [1,2,3,4]
-    
-    var dosageList: [String] = ["Every 2 hours", "Every 4 hours", "Every 6 hours", "Every 8 hours (three times a day)", "Every 10 hours", "Every 12 hours (twice a day)", "Every 24 hours (Once a day)"]
-    
-    var calendarList: [String] = ["1 day","2 days", "3 days", "One Week", "One Month", "Two Months"]
-    var calendarIntList: [Int] = [1,2,3,7,30,60]
-    
+    */
+    var quantityDosis = [
+        "1 pill": 1,
+        "2 pills": 2,
+        "3 pills": 3,
+        "4 pills": 4
+    ]
+    var dosageList: [String] = [
+        "Every 2 hours",
+        "Every 4 hours",
+        "Every 6 hours",
+        "Every 8 hours (three times a day)",
+        "Every 10 hours",
+        "Every 12 hours (twice a day)",
+        "Every 24 hours (Once a day)"
+    ]
+    var calendar = [
+        "One day": 1,
+        "Two days": 2,
+        "Three days": 3,
+        "One Week": 7,
+        "One Month": 30,
+        "Two Months": 60
+    ]
     var quantityDosisPicker : UIPickerView = UIPickerView()
     var dosagePicker : UIPickerView =  UIPickerView()
     var calendarPicker : UIPickerView =  UIPickerView()
     
-    var selectedCalendar : Int = Int()
-    var selectedQuantityDosis : Int = Int()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.quantityDosisPicker = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.dosagePicker = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
@@ -61,7 +74,39 @@ class PrescriptionFormMedViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
-        savePrescription(idPatient: self.patientId)
+        let parameters = [
+            "Frecuency": self.dosageTextField.text!,
+            "Quantity": self.quantityDosis[self.quantityDosisTextField.text!]!,
+            "DurationInDays": self.calendar[self.calendarTextField.text!]!,
+            "Description": nameTextField.text!,
+            "StartedAt": getCurrenttime(),
+            "PrescriptionTypeId": 1
+            ] as [String : Any]
+        
+        Alamofire.request("\(FollowLifeApi.doctorsUrl)/\(self.idDoctor)/patients/\(self.patientId)/prescriptions", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["X-FLLWLF-TOKEN": self.token, "Accept": "application/json"]).responseJSON { (response) in
+            let statusCode = response.response?.statusCode
+            
+            switch response.result {
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+                
+            case .success( _):
+                if statusCode == 200 {
+                    for controller in self.navigationController!.viewControllers {
+                        if controller.isKind(of: PrescriptionListTableViewController.self) {
+                            self.navigationController!.popToViewController(controller, animated: true)
+                            break
+                        }
+                    }
+                    //                    self.editSpecialtyButton.isEnabled = false
+                    //                    self.specialtyTextField.isUserInteractionEnabled = false
+                }
+                else {
+                    self.showErrorMessage()
+                }
+                
+            }
+        }
     }
     
     func createPicker(textField : UITextField,picker : UIPickerView) {
@@ -84,14 +129,10 @@ class PrescriptionFormMedViewController: UIViewController {
         toolbar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolbar
         
-        
         //self.specialtyPicker.addSubview(toolbar)
-        
-        
     }
     
     func addToolbar(textField : UITextField){
-        
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneClicked))
@@ -104,73 +145,16 @@ class PrescriptionFormMedViewController: UIViewController {
     
     func getCurrenttime() -> String {
         let now = Date()
-        
         let formatter = DateFormatter()
-        
         formatter.timeZone = TimeZone.current
-        
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        
         let dateString = formatter.string(from: now)
         
         return dateString
     }
     
-    func savePrescription(idPatient: String){
-        
-        let name = nameTextField.text
-        print(" qd \(selectedQuantityDosis)")
-        let quantityDosis = selectedQuantityDosis
-        print("calendar \(selectedCalendar)")
-        let dosage = dosageTextField.text
-        let calendar = selectedCalendar
-        
-        
-        let parameters = [
-            "Frecuency": dosage,
-            "Quantity": quantityDosis,
-            "DurationInDays": calendar,
-            "Description": name,
-            "StartedAt": getCurrenttime(),
-            "PrescriptionTypeId": 1
-            ] as [String : Any]
-        
-        
-        Alamofire.request("\(FollowLifeApi.doctorsUrl)/\(self.idDoctor)/patients/\(idPatient)/prescriptions", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["X-FLLWLF-TOKEN": self.token, "Accept": "application/json"]).responseJSON { (response) in
-            
-            let statusCode = response.response?.statusCode
-            
-            switch response.result {
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-                
-            case .success(let value):
-                
-                let jsonObject: JSON = JSON(value)
-                print("pres \(jsonObject) code \(statusCode)")
-                if statusCode == 200 {
-                    print("save pres \(jsonObject)")
-                    //self.performSegue(withIdentifier: "showPrescriptionType", sender: nil)
-                    self.dismiss(animated: true, completion: nil)
-                    //                    self.editSpecialtyButton.isEnabled = false
-                    //                    self.specialtyTextField.isUserInteractionEnabled = false
-                    
-                }
-                else {
-                    self.showErrorMessage()
-                }
-                
-            }
-        }
-    }
-    
-    
-    
     @objc func doneClicked() {
-
         if(nameTextField.isFirstResponder ==  true) {
-
-           
             let name = nameTextField.text
             if name == "" {
                 completeFieldsMessage()
@@ -196,7 +180,6 @@ class PrescriptionFormMedViewController: UIViewController {
             }
             calendarTextField.resignFirstResponder()
         }
-
     }
     
     func completeFieldsMessage(){
@@ -215,7 +198,6 @@ class PrescriptionFormMedViewController: UIViewController {
     
 
     @objc func cancelClicked() {
-
         if(nameTextField.isFirstResponder ==  true) {
             nameTextField.text = ""
             nameTextField.resignFirstResponder()
@@ -230,34 +212,29 @@ class PrescriptionFormMedViewController: UIViewController {
             calendarTextField.resignFirstResponder()
         }
     }
-
 }
 
 extension PrescriptionFormMedViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == quantityDosisPicker {
-            return quantityDosisList[row]
+            return Array(self.quantityDosis)[row].key
         } else if pickerView == dosagePicker {
             return dosageList[row]
         } else if pickerView == calendarPicker {
-            return calendarList[row]
+            return Array(self.calendar)[row].key
+        } else {
+            return "-1"
         }
-        
-        return "-1"
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         if pickerView == quantityDosisPicker {
-            self.quantityDosisTextField.text = quantityDosisList[row]
-            selectedQuantityDosis = quantityDosisIntList[row]
+            self.quantityDosisTextField.text = Array(self.quantityDosis)[row].key
         } else if pickerView == dosagePicker {
             self.dosageTextField.text = dosageList[row]
         } else if pickerView == calendarPicker {
-            self.calendarTextField.text = calendarList[row]
-            selectedCalendar = calendarIntList[row]
+            self.calendarTextField.text = Array(self.calendar)[row].key
         }
-        
     }
 }
 
@@ -268,13 +245,12 @@ extension PrescriptionFormMedViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         if pickerView == quantityDosisPicker {
-            return quantityDosisList.count
+            return quantityDosis.count
         } else if pickerView == dosagePicker {
             return dosageList.count
         } else if pickerView == calendarPicker {
-            return calendarList.count
+            return calendar.count
         }
         return -1
     }

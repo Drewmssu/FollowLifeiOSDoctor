@@ -65,7 +65,7 @@ class PrescriptionFormAllViewController: UIViewController {
             "Frecuency": "",
             "Quantity": "",
             "DurationInDays": "",
-            "Description": description,
+            "Description": description!,
             "StartedAt": getCurrenttime(),
             "PrescriptionTypeId": Int(prescriptionType)
             ] as [String : Any]

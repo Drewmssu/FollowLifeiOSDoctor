@@ -36,6 +36,9 @@ class PatientsProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func seePrescriptionAction(_ sender: UIButton) {
+        
+    }
     
     func updateView() {
         let headers = [
@@ -54,7 +57,6 @@ class PatientsProfileViewController: UIViewController {
                     let jsonObject = JSON(value)
                     
                     if statusCode == 200 {
-                        print("\(jsonObject["name"].stringValue) \(jsonObject["lastName"].stringValue)")
                         self.nameLabel.text = "\(jsonObject["name"].stringValue) \(jsonObject["lastName"].stringValue)"
                         self.phoneNumberLabel.text = jsonObject["age"].stringValue
                         self.emailLabel.text = jsonObject["bloodType"].stringValue

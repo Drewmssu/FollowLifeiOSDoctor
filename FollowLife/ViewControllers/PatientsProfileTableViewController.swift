@@ -92,7 +92,7 @@ class PatientsProfileTableViewController: UITableViewController {
                         case .failure(let error):
                             print("Error \(error.localizedDescription)")
                             
-                        case .success(let value):
+                        case .success( _):
                             if statusCode == 200 {
                                 let successAlert = UIAlertController(title: "Successful sent", message: "The message is been sent.", preferredStyle: UIAlertControllerStyle.alert)
                                 successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))

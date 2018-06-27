@@ -22,7 +22,7 @@ public class Preference {
     }
     
     public static func retreiveData(key: String) -> String {
-        let value: String
+        var value: String
         
         if preferences.string(forKey: key) != nil {
             value = preferences.string(forKey: key)!
@@ -34,13 +34,9 @@ public class Preference {
     }
     
     public static func retreiveData(key: String) -> Int {
-        let value: Int
+        var value: Int = 0
         
-        if preferences.integer(forKey: key) != nil {
-            value = preferences.integer(forKey: key)
-        } else {
-            value = 0
-        }
+        value = preferences.integer(forKey: key)
         
         return value
     }

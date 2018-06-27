@@ -54,7 +54,7 @@ class AddAppointmentViewController: UIViewController {
     
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
         
-        let params: [String : Any] = ["PatientId" : 7, "DoctorId" : user.userId, "AppointmentDate" : "2018-06-30T15:19:16.434Z", "Reason" : reasonTextField.text!, "AppointmentId" : appointmentId, "Action" : 1, ]
+        let params: [String : Any] = ["PatientId" : 7, "DoctorId" : user.userId, "AppointmentDate" : "2018-06-30T15:19:16.434Z", "Reason" : reasonTextField.text!, "AppointmentId" : appointmentId!, "Action" : 1, ]
         
         viewModel.addAppointment(params: params, method: .post, token: user.token, success: { (message) in
             print(message)

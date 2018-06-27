@@ -104,7 +104,7 @@ class ProfileViewController: UIViewController {
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        //let tappedImage = tapGestureRecognizer.view as! UIImageView
         presentImagePickerController(forSourceType: .photoLibrary)
     }
     override func didReceiveMemoryWarning() {
@@ -138,11 +138,9 @@ class ProfileViewController: UIViewController {
             let confirmationAlert = UIAlertController(title: "Confirmation", message: "Are you sure you want to submit this CMD code: \(cmpCode)? It can't be changed later.", preferredStyle: .alert)
             let submitAction = UIAlertAction(title: "Submit", style: .default, handler: { (action) -> Void in
                 
-                
                 let parameters = [
                     "MedicalIdentification": cmpCode
                 ]
-                
                 
                 Alamofire.request("\(FollowLifeApi.doctorsUrl)/\(self.idDoctor)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: ["X-FLLWLF-TOKEN": self.token, "Content-Type": "application/json"]).responseJSON { (response) in
                     
@@ -153,23 +151,16 @@ class ProfileViewController: UIViewController {
                         print("Error: \(error.localizedDescription)")
                         
                     case .success(let value):
-                        
-                        let jsonObject: JSON = JSON(value)
-                        
+                        let _: JSON = JSON(value)
                         if statusCode == 200 {
-                            
                             self.cmpTextField.text = cmpCode
                             self.editCmdButton.isEnabled = false
-                            
-                            
                         }
                         else {
                             self.showErrorMessage()
                         }
-                        
                     }
                 }
-                
             })
             
             let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
@@ -310,16 +301,10 @@ class ProfileViewController: UIViewController {
         toolbar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolbar
         
-        
         //self.specialtyPicker.addSubview(toolbar)
-        
-        
     }
     
-    
     func logOut(){
-        
-        
         Alamofire.request("\(FollowLifeApi.patientsUrl)/logout", method: .get, encoding: JSONEncoding.default, headers: ["X-FLLWLF-TOKEN": self.token, "Accept": "application/json"]).responseJSON { (response) in
             
             let statusCode = response.response?.statusCode
@@ -329,18 +314,14 @@ class ProfileViewController: UIViewController {
                 print("Error: \(error.localizedDescription)")
                 
             case .success(let value):
-                
-                let jsonObject: JSON = JSON(value)
-                print(statusCode)
+                let _: JSON = JSON(value)
+                print(statusCode!)
                 if statusCode == 200 {
-                    
                     
                 }
                 else {
-                    
                     self.showErrorMessage()
                 }
-                
             }
         }
     }
