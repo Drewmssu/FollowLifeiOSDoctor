@@ -85,7 +85,7 @@ class AppointmentViewModel {
     func getAppointments(id: Int, token: String, success: @escaping ([AppointmentCellModel]) -> Void, failure: @escaping (String) -> Void) {
         
         let url = FollowLifeApi.doctorsUrl + "/\(id)/appointments"
-        let header = ["Content-Type" : "application/json" , "X-FLLWLF-TOKEN" : token]
+        let header = ["Accept" : "application/json" , "X-FLLWLF-TOKEN" : token]
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (jsonData) in
             //let statusCodeOnResponse = jsonData.response?.statusCode

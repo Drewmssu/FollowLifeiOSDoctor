@@ -1824,9 +1824,12 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KyX-bJ-N5B">
                                         <rect key="frame" x="24" y="24" width="109.5" height="116"/>
                                         <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="109.5" id="C7C-VJ-xJh"/>
+                                        </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="njB-FV-dsq">
-                                        <rect key="frame" x="173.5" y="48" width="129.5" height="62.5"/>
+                                        <rect key="frame" x="163.5" y="48" width="181.5" height="62.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marcus Donovan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHE-4c-aSK">
                                                 <rect key="frame" x="0.0" y="0.0" width="129.5" height="23.5"/>
@@ -1840,7 +1843,7 @@
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="correo@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pA-xN-6aM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="correo@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pA-xN-6aM">
                                                 <rect key="frame" x="0.0" y="43" width="117" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1858,14 +1861,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.41960784309999999" green="0.80392156859999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="njB-FV-dsq" secondAttribute="trailing" constant="72" id="06H-Pg-5Bl"/>
+                                    <constraint firstAttribute="trailing" secondItem="njB-FV-dsq" secondAttribute="trailing" constant="30" id="06H-Pg-5Bl"/>
                                     <constraint firstItem="ABS-78-E9L" firstAttribute="leading" secondItem="KyX-bJ-N5B" secondAttribute="leading" id="57d-zM-iIH"/>
                                     <constraint firstAttribute="trailing" secondItem="ABS-78-E9L" secondAttribute="trailing" constant="24" id="Hsx-qv-WpU"/>
                                     <constraint firstItem="KyX-bJ-N5B" firstAttribute="top" secondItem="jB9-Wr-hsK" secondAttribute="top" constant="24" id="bHP-UW-be7"/>
                                     <constraint firstAttribute="height" constant="210" id="m2b-xr-JBm"/>
                                     <constraint firstItem="ABS-78-E9L" firstAttribute="top" secondItem="KyX-bJ-N5B" secondAttribute="bottom" constant="18" id="n4D-cN-xAe"/>
                                     <constraint firstItem="ABS-78-E9L" firstAttribute="leading" secondItem="jB9-Wr-hsK" secondAttribute="leading" constant="24" id="pzL-ju-PuR"/>
-                                    <constraint firstItem="njB-FV-dsq" firstAttribute="leading" secondItem="KyX-bJ-N5B" secondAttribute="trailing" constant="40" id="tDg-HJ-9eu"/>
+                                    <constraint firstItem="njB-FV-dsq" firstAttribute="leading" secondItem="KyX-bJ-N5B" secondAttribute="trailing" constant="30" id="tDg-HJ-9eu"/>
                                     <constraint firstAttribute="bottom" secondItem="ABS-78-E9L" secondAttribute="bottom" constant="24" id="yF4-VD-66i"/>
                                     <constraint firstItem="njB-FV-dsq" firstAttribute="top" secondItem="jB9-Wr-hsK" secondAttribute="top" constant="48" id="yrf-it-TOh"/>
                                 </constraints>
@@ -1897,7 +1900,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="euV-Yc-IOf">
                                                 <rect key="frame" x="45" y="0.0" width="330" height="47.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p1-CM-paS">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p1-CM-paS">
                                                         <rect key="frame" x="0.0" y="0.0" width="330" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="qW3-RA-yoi"/>
@@ -1938,7 +1941,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="b1n-xW-8RM">
                                                 <rect key="frame" x="45" y="0.0" width="330" height="47.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2u-a5-BSX">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2u-a5-BSX">
                                                         <rect key="frame" x="0.0" y="0.0" width="330" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="aHF-m6-zcW"/>
@@ -1979,7 +1982,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lzg-AT-rLA">
                                                 <rect key="frame" x="45" y="0.0" width="330" height="47.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWX-b5-TcY">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWX-b5-TcY">
                                                         <rect key="frame" x="0.0" y="0.0" width="330" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="CFe-IN-fw5"/>
@@ -2042,10 +2045,13 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="buV-7x-BSf"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="ageLabel" destination="WNK-pp-jse" id="igs-z8-JK2"/>
+                        <outlet property="bloodTypeLabel" destination="Ehd-e9-cwY" id="T7A-22-nGv"/>
                         <outlet property="emailLabel" destination="2pA-xN-6aM" id="Yc3-hY-oG3"/>
                         <outlet property="nameLabel" destination="VHE-4c-aSK" id="0hY-0S-d5K"/>
                         <outlet property="phoneNumberLabel" destination="ck1-4d-f4U" id="kwF-b4-OqY"/>
                         <outlet property="prescriptionsButton" destination="daB-g4-krT" id="iF7-DG-xXM"/>
+                        <outlet property="weightLabel" destination="u95-zg-00s" id="4Jo-EO-d8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTh-29-PL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2221,7 +2227,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="WXU-lN-JkJ"/>
                                             </constraints>
-                                            <state key="normal" title="Button" backgroundImage="trash"/>
+                                            <state key="normal" backgroundImage="trash"/>
                                             <connections>
                                                 <action selector="deleteAppoitnment:" destination="QmU-6I-7Ks" eventType="touchUpInside" id="gYq-cw-JBg"/>
                                             </connections>

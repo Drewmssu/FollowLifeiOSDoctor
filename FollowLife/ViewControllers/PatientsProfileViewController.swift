@@ -19,6 +19,9 @@ class PatientsProfileViewController: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var prescriptionsButton: UIButton!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var bloodTypeLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -54,12 +57,16 @@ class PatientsProfileViewController: UIViewController {
                     print("Error: \(error.localizedDescription)")
                     
                 case .success(let value):
-                    let jsonObject = JSON(value)
+                    let jsonObject = JSON(value)["Result"]
+                    print(jsonObject)
                     
                     if statusCode == 200 {
                         self.nameLabel.text = "\(jsonObject["name"].stringValue) \(jsonObject["lastName"].stringValue)"
-                        self.phoneNumberLabel.text = jsonObject["age"].stringValue
-                        self.emailLabel.text = jsonObject["bloodType"].stringValue
+                        self.phoneNumberLabel.text = jsonObject["phoneNumber"].stringValue
+                        self.emailLabel.text = (jsonObject["email"].stringValue == "") ? "Unknown" : jsonObject["email"].stringValue
+                        self.ageLabel.text = (jsonObject["age"].stringValue == "") ? "Unknown" : jsonObject["age"].stringValue
+                        self.weightLabel.text = (jsonObject["weight"].stringValue == "") ? "Unknown" : jsonObject["weight"].stringValue
+                        self.bloodTypeLabel.text = (jsonObject["bloodType"].stringValue == "") ? "Unknown" : jsonObject["bloodType"].stringValue
                     }
                 }
         }
